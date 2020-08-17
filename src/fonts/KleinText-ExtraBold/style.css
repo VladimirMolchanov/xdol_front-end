@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Klein';
+    src: local('Klein Text ExtraBold'), local('Klein-Text-ExtraBold'),
+        url('KleinText-ExtraBold.woff2') format('woff2'),
+        url('KleinText-ExtraBold.woff') format('woff'),
+        url('KleinText-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }

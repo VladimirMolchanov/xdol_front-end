@@ -2,6 +2,7 @@ doctype html
 html(lang="ru")
   include ../includes/head.pug
   body
-    .container
-      h1 Start
-      p Hello world!
+    include ../includes/header.pug
+    main(style="position:relative")
+      .container(style="height: 1000px;background: aquamarine;")
+    include ../includes/footer.pug

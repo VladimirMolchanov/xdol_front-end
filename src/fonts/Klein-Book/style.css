@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Klein';
+    src: local('Klein Book'), local('Klein-Book'),
+        url('Klein-Book.woff2') format('woff2'),
+        url('Klein-Book.woff') format('woff'),
+        url('Klein-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

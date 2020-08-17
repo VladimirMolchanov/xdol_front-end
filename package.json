@@ -41,6 +41,7 @@
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "del-cli": "^3.0.1",
+    "file-loader": "^6.0.0",
     "html-cli": "^1.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",

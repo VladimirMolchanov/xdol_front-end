@@ -1,0 +1,63 @@
+header
+    padding-top: 64px
+    padding-left: 80px
+    padding-right: 80px
+    // position: relative
+    position: absolute
+    width: 100%
+    background: cadetblue
+    .logo
+        // position: absolute
+        // left: 80px
+        z-index: 100
+        img
+            width: 92px
+    .menu
+        // position: absolute
+        // right: 64px
+        // top: 56px
+        top: -8px
+        // padding-right: 33px
+        position: relative
+        width: 140px
+        z-index: 100
+        &::before
+            content: ""
+            // border: 1px solid $color--main
+            position: absolute
+            right: -1px
+            top: 8px
+            // height: 18px
+            height: 16px
+            width: 1.4px
+            background: $color--main
+        menu
+            padding: 0px
+            margin: 0px
+        li
+            list-style: none
+            margin-bottom: 13px   
+            a
+                font-size: rem(16)
+                line-height: rem(16)
+                color: $color--main
+                padding: 8px 16px
+                display: inline-block
+                text-decoration: none
+                &:hover,
+                &.active
+                    background: $color--main
+                    color: #fff
+
+    @include media-breakpoint-down(md)
+        position: relative
+        padding-top: 24px
+        padding-left: 20px
+        padding-right: 20px
+        .menu
+            width: 98px
+            li
+                a
+                    padding: 8px 8px
+                    font-size: rem(14)
+                    line-height: rem(14)

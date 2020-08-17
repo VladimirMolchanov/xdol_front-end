@@ -85,6 +85,18 @@ module.exports = {
                 test: /\.pug$/,
                 loader: 'pug-loader'
             },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: 'fonts/'
+                    }
+                  }
+                ]
+            }
         ]
     },
     plugins: [
@@ -96,11 +108,6 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-            {
-                from: './src/fonts',
-                to: './fonts',
-                noErrorOnMissing: true
-            },
             {
                 from: './src/favicon',
                 to: './favicon',
