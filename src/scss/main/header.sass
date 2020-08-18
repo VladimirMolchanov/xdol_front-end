@@ -1,18 +1,32 @@
-header
+.main-header
     padding-top: 64px
-    padding-left: 80px
-    padding-right: 80px
     // position: relative
-    position: absolute
+    padding-left: 20px
+    padding-right: 20px
     width: 100%
-    background: cadetblue
-    .logo
+    // background: cadetblue
+    @media screen and (min-width: 1330px + 13px) // 13
+        position: absolute
+    @media screen and (min-width: 1460px + 13px) // 13
+        position: absolute
+    @media screen and (min-width: 1500px + 13px)
+        position: absolute
+        padding-left: 40px
+        padding-right: 40px
+    @media screen and (min-width: 1580px + 13px)
+        position: absolute
+        
+        padding-left: 80px
+        padding-right: 80px
+    .main-header__logo
         // position: absolute
         // left: 80px
         z-index: 100
         img
             width: 92px
-    .menu
+            @include media-breakpoint-down(md)
+                width: 80px
+    .main-header__menu
         // position: absolute
         // right: 64px
         // top: 56px
@@ -36,7 +50,9 @@ header
             margin: 0px
         li
             list-style: none
-            margin-bottom: 13px   
+            margin-bottom: 13px
+            &:last-child
+                margin-bottom: 0px
             a
                 font-size: rem(16)
                 line-height: rem(16)
@@ -54,9 +70,10 @@ header
         padding-top: 24px
         padding-left: 20px
         padding-right: 20px
-        .menu
+        .main-header__menu
             width: 98px
             li
+                margin-bottom: 10px
                 a
                     padding: 8px 8px
                     font-size: rem(14)

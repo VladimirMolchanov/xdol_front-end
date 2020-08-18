@@ -1,29 +1,76 @@
 .main-footer
-    padding-left: 80px
-    padding-right: 80px
+    padding-left: 20px
+    padding-right: 20px
+    @include media-breakpoint-up(xl)
+        // max-width: 1140px
+        // margin: auto
+        // padding: 0px
+    @media screen and (min-width: 1330px + 13px) // 13
+        max-width: 100%
+        padding-left: 20px
+        padding-right: 20px
+    @media screen and (min-width: 1500px + 13px)
+        padding-left: 40px
+        padding-right: 40px
+    @media screen and (min-width: 1580px + 13px)
+        padding-left: 80px
+        padding-right: 80px
+    .container
+        @include media-breakpoint-up(xl)
+            max-width: inherit
     .main-footer__main
         padding-bottom: 40px
         padding-top: 40px
+        @include media-breakpoint-down(md)
+            padding-bottom: 32px
+            padding-top: 48px
     .main-footer__bootom
         padding-bottom: 40px
         padding-top: 40px
+        @include media-breakpoint-down(md)
+            padding-bottom: 32px
+            padding-top: 32px
+    .main-footer__social-link
+        display: inline-block
+        margin-right: 16px
+        &:last-child
+            margin-right: 0
+        &:hover
+            svg
+                path
+                    fill: $color--main
+        svg
+            path
+                fill: $color--secondary
+        
     .main-footer__email
         margin-bottom: 24px
         font-size: rem(30)
         line-height: rem(40)
+        @include media-breakpoint-down(md)
+            margin-bottom: 16px
+            font-size: rem(18)
+            line-height: rem(30)
         a
             color: $color--main
     .main-footer__phone
         font-size: rem(30)
         line-height: rem(40)
+        @include media-breakpoint-down(md)
+            font-size: rem(18)
+            line-height: rem(30)
         a
             color: $color--main
     .main-footer__copyright
         font-size: rem(16)
         line-height: rem(16)
         color: $color--secondary
+        @include media-breakpoint-down(md)
+            font-size: rem(14)
+            line-height: rem(14)
     .main-footer__address
         width: 103px
         color: $color--main
         font-size: rem(16)
         line-height: rem(28)
+    
