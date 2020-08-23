@@ -1,0 +1,200 @@
+.form-group--style-default
+    label
+        font-size: rem(16)
+        line-height: rem(16)
+        color: $color--secondary
+        display: block
+        margin-bottom: 26px
+        @include media-breakpoint-down(md)
+            font-size: rem(14)
+            line-height: rem(16)
+            margin-bottom: 16px
+    .select
+        position: relative
+    .new-select
+        font-size: rem(16)
+        line-height: rem(16)
+        color: $color--main
+        border: 1px solid #D0D2D4
+        padding-bottom: 15px
+        padding-right: 24px
+        padding-left: 24px
+        padding-top: 16px
+        cursor: pointer
+        position: relative
+        border-bottom: none
+        @include media-breakpoint-down(md)
+            font-size: rem(14)
+            line-height: rem(16)
+        &::after
+            content: ""
+            background: url('../img/form-select-arrows.svg') no-repeat
+            background-size: contain
+            width: 9px
+            height: 18px
+            position: absolute
+            right: 16px
+            @include media-breakpoint-down(md)
+                width: 8px
+                height: 15px
+                
+        .after
+            width: 100%
+            height: 1px
+            position: absolute
+            bottom: 0px
+            left: 0px
+            transition: all .450s
+            .fill
+                background: #D0D2D4
+                width: 100%
+                height: 100%
+        &.on
+            .after
+                padding-left: 16px
+                padding-right: 16px
+    .new-select__list
+        background: #E5E5E5
+        position: absolute
+        width: 100%
+        z-index: 10
+        border: 1px solid #D0D2D4
+        border-top: none
+        font-size: rem(16)
+        line-height: rem(16)
+        color: $color--secondary
+        // padding-left: 24px
+        // padding-right: 24px
+        padding-bottom: 12px
+        padding-top: 12px
+        cursor: pointer
+        .new-select__item
+            padding-bottom: 12px
+            padding-right: 24px
+            padding-left: 24px
+            padding-top: 12px
+            @include hover()
+                color: $color--main
+                
+
+.form-group
+    margin-bottom: 40px
+    @include media-breakpoint-down(md)
+        margin-bottom: 24px
+    Label
+        font-size: rem(16)
+        line-height: rem(28)
+        @include media-breakpoint-down(md)
+            font-size: rem(14)
+            line-height: rem(16)
+            margin-bottom: 16px
+    input,
+    textarea
+        font-size: rem(16)
+        line-height: rem(16)
+        padding-bottom: 13px
+        padding-right: 23px
+        padding-left: 23px
+        padding-top: 13px
+        border-radius: 0px
+        background: none
+        border: 1px solid #D0D2D4
+        @include media-breakpoint-down(md)
+            font-size: rem(14)
+            line-height: rem(16)
+            padding-bottom: 15px
+            padding-right: 15px
+            padding-left: 15px
+            padding-top: 15px
+        &:focus
+            color: $color--main
+            background: none
+            border: 1px solid $color--main
+            outline: 0
+            box-shadow: none
+        &.error
+            color: $color--main
+            background: none
+            border: 1px solid #E14141
+            outline: 0
+            box-shadow: none
+        &::placeholder
+            color: $color--secondary
+            opacity: 1
+    input
+        height: auto
+    textarea
+        padding-bottom: 15px
+        padding-top: 15px
+        min-height: 240px
+
+.input-file
+    input[type="file"]
+        display: none
+    label
+        cursor: pointer
+        border: 1px solid #D0D2D4
+        padding-left: 23px
+        padding-right: 24px
+        padding-bottom: 11px
+        padding-top: 11px
+        z-index: 1
+        position: relative
+        @include media-breakpoint-down(md)
+            padding-left: 22px
+            padding-right: 24px
+            padding-bottom: 15px
+            padding-top: 15px
+        .arrow
+            padding-right: 15px
+            display: inline
+            position: relative
+            top: -1px
+            svg
+                vertical-align: baseline
+        .field__file-fake
+            display: none
+            .field__file-fake--close
+                padding-right: 25px
+                display: inline
+        &.on
+            background: $color--main
+            color: #fff
+            .field__file-button
+                display: none
+            .field__file-fake
+                display: block
+        &::after
+            background: $color--main
+            content: ''
+            height: 100%
+            left: 0
+            position: absolute
+            top: 0
+            transition: all .3s
+            width: 0%
+            z-index: -1
+        @include hover()
+            text-decoration: none
+            color: #fff
+            // background-color: #fff
+            // border-color: #fff
+            &::after
+                width: 100%
+            .arrow
+                svg
+                    path
+                        fill: #fff
+
+.form-group-inline
+    display: flex
+    justify-content: space-between
+    @include media-breakpoint-down(md)
+        flex-direction: column
+    Label
+        margin-bottom: 0
+        display: flex
+        align-items: center
+    input
+        width: 100%
+        max-width: 367px

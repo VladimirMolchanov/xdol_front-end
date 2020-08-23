@@ -1,0 +1,43 @@
+.container
+    &.container__feedback
+        max-width: 605px!important
+    
+.feedback
+    margin-bottom: 160px
+    @include media-breakpoint-down(md)
+        margin-bottom: 32px
+    h2
+        margin-bottom: 56px
+        @include media-breakpoint-down(md)
+            padding-bottom: 29px
+            margin-bottom: 48px
+            border-bottom: 2px solid #D0D2D4
+    textarea
+        width: 100%
+    .feedback__form-email
+        @include media-breakpoint-down(md)
+            margin-bottom: 32px
+    .feedback__form-group-polity
+        margin-bottom: 48px
+        @include media-breakpoint-down(md)
+            margin-bottom: 40px
+        span
+            font-size: rem(16)
+            line-height: rem(28)
+            display: block
+            @include media-breakpoint-down(md)
+                font-size: rem(14)
+                line-height: rem(26)
+                display: inline
+            
+
+    .feedback__form-file
+        margin-bottom: 24px
+        @include media-breakpoint-down(md)
+            margin-bottom: 16px
+    .feedback__form-text-area
+        margin-bottom: 10px
+        @include media-breakpoint-down(md)
+            margin-bottom: 18px
+    .btn-x-default
+        width: 100%

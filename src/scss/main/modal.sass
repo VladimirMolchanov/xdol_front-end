@@ -1,0 +1,117 @@
+.modal-contact
+    padding-right: 0!important
+    .container
+        @include media-breakpoint-down(md)
+            padding-right: 32px
+            padding-left: 32px
+    .row
+        @include media-breakpoint-down(md)
+            margin-right: -32px
+            margin-left: -32px
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-auto, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto 
+        @include media-breakpoint-down(md)
+            padding-right: 32px
+            padding-left: 32px
+    .close
+        position: absolute
+        right: 40px
+        top: 40px
+        @include media-breakpoint-down(md)
+            right: 24px
+            top: 24px
+    .modal-content
+        background: $color--main
+        color: #fff
+        height: 100%
+    .modal-dialog
+        max-width: inherit
+        height: 100%
+        margin-top: 0
+        margin-bottom: 0
+        padding-top: 144px
+        padding-bottom: 144px
+        padding-left: 19px
+        padding-right: 19px
+        @include media-breakpoint-down(md)
+            padding-top: 24px
+            padding-bottom: 24px
+            padding-left: 16px
+            padding-right: 16px
+            margin-right: 0
+            margin-left: 0
+        @media screen and (min-width: 1500px + 13px)
+            padding-left: 39px
+            padding-right: 39px
+        @media screen and (min-width: 1580px + 13px)
+            padding-left: 80px
+            padding-right: 80px
+    .modal-body
+        align-items: center
+        display: flex
+        @include media-breakpoint-down(md)
+            padding: 0
+    .modal-contact__body
+        display: flex
+        justify-content: space-between
+        @include media-breakpoint-down(sm)
+            flex-direction: column
+
+    .modal-contact__address
+        // width: 103px
+        font-size: rem(30)
+        line-height: rem(40)
+        margin-bottom: 98px
+        @include media-breakpoint-down(md)
+            margin-bottom: 48px
+            font-size: rem(18)
+            line-height: rem(30)
+    .modal-contact__social-link
+        display: inline-block
+        margin-right: 16px
+        &:last-child
+            margin-right: 0
+        &:hover
+            svg
+                path
+                    fill: #fff
+        svg
+            path
+                fill: $color--secondary
+    .modal-contact__email
+        margin-bottom: 48px
+        font-size: rem(40)
+        line-height: rem(50)
+        @include media-breakpoint-down(md)
+            margin-bottom: 24px
+            font-size: rem(24)
+            line-height: rem(32)
+        a
+            color: #fff
+            font-size: inherit
+            line-height: inherit
+    .modal-contact__phone
+        font-size: rem(40)
+        line-height: rem(50)
+        margin-bottom: 80px
+        @include media-breakpoint-down(md)
+            font-size: rem(24)
+            line-height: rem(32)
+            margin-bottom: 28px
+        a
+            color: #fff
+            font-size: inherit
+            line-height: inherit
+    .modal-contact__title
+        color: #71777D
+        font-size: rem(16)
+        line-height: rem(16)
+        margin-bottom: 48px
+        @include media-breakpoint-down(md)
+            font-size: rem(14)
+            line-height: rem(16)
+            margin-bottom: 24px
+    .modal-contact__btn
+        @include media-breakpoint-down(md)
+            margin-bottom: 48px
+        .btn-x-default
+            min-width: 267px

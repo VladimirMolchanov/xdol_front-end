@@ -1,0 +1,96 @@
+.catalog-project
+    @include media-breakpoint-down(md)
+        margin-bottom: 81px
+    .catalog-project__filter
+        margin-bottom: 64px
+        @include media-breakpoint-down(md)
+            margin-bottom: 0
+        .catalog-project__filter--selects
+            display: flex
+            margin-left: -15px
+            margin-right: -15px
+            margin-bottom: 32px
+            @include media-breakpoint-down(md)
+                flex-direction: column
+                margin-bottom: 24px
+            .catalog-project__filter--selects-item
+                flex: 1 1 auto
+                padding: 0px 15px
+                @include media-breakpoint-down(md)
+                    margin-bottom: 24px
+                .form-group
+                    margin-bottom: 0
+        .catalog-project__filter--btn-group
+            @include media-breakpoint-down(md)
+                margin-bottom: 24px + 8px
+            .catalog-project__filter-btn
+                margin-right: 16px
+                margin-bottom: 16px
+                @include media-breakpoint-down(md)
+                    margin-right: 0
+                    width: 100%
+                .btn-x-default
+                    @include media-breakpoint-down(md)
+                        width: 100%
+
+
+
+    .catalog-project__catalog
+        @include media-breakpoint-up(md)
+            display: flex
+            justify-content: space-between
+        .catalog-project__catalog--item
+            max-width: 466px
+            margin-bottom: 200px
+            overflow: hidden
+            @include media-breakpoint-down(md)
+                margin-bottom: 64px
+            
+            .catalog-project__catalog--item-body
+                margin-bottom: 32px
+                @include media-breakpoint-down(md)
+                    margin-bottom: 24px
+
+        .catalog-project__catalog--item-type
+            font-size: rem(16)
+            line-height: rem(28)
+            margin-bottom: 8px
+            @include media-breakpoint-down(md)
+                font-size: rem(14)
+                line-height: rem(26)
+        .catalog-project__catalog--item-name
+            font-size: rem(30)
+            line-height: rem(40)
+            color: $color--main
+            @include media-breakpoint-down(md)
+                font-size: rem(18)
+                line-height: rem(30)
+            a
+                font-size: inherit
+                line-height: inherit
+                color: inherit
+                text-decoration: none
+
+        .catalog-project__catalog--item
+            .catalog-project__catalog--item-name
+                transition: all 1s
+                margin-left: -33px
+                .arrow
+                    padding-right: 16px
+                    display: inline-block
+            .catalog-project__catalog--item-body
+                overflow: hidden
+                img
+                    transition: all 1s
+            @include hover()
+                .catalog-project__catalog--item-body
+                    img
+                        transform: scale(1.2)
+                .catalog-project__catalog--item-name
+                    margin-left: 0px
+    // .catalog-project__catalog-row
+    //     &:last-child
+    //         .catalog-project__catalog--item
+    //                 &:last-child
+    //                     @include media-breakpoint-down(md)
+    //                         margin-bottom: 0px

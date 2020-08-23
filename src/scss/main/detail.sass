@@ -1,0 +1,29 @@
+.detail-content
+    margin-top: 80px
+    margin-bottom: 170px
+    @include media-breakpoint-down(md)
+        margin-top: 0
+        margin-bottom: 62px
+    .detail-content--block
+        margin-bottom: 90px
+        @include media-breakpoint-down(md)
+            margin-bottom: 38px
+        .detail-content--block--title
+            padding-top: 2px
+            font-size: rem(16)
+            line-height: rem(28)
+            margin-bottom: 24px
+            @include media-breakpoint-down(md)
+                font-size: rem(14)
+                line-height: rem(16)
+                padding-top: 0
+        .detail-content--block--body
+            p
+                font-size: rem(28)
+                line-height: rem(40)
+                letter-spacing: -0.2px
+                margin-bottom: 30px
+                @include media-breakpoint-down(md)
+                    font-size: rem(18)
+                    line-height: rem(30)
+                    margin-bottom: 18px

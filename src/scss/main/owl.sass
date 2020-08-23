@@ -1,0 +1,130 @@
+.owl-custom-dots
+    // margin-left: -7px
+    // margin-right: -7px
+    position: relative
+    top: 5px
+    overflow: hidden
+    @include media-breakpoint-down(md)
+        flex-direction: column
+        display: flex
+        margin-left: 0px
+        margin-right: 0px
+        top: 0
+        padding-right: 7px
+    &::before
+        content: ""
+        width: 84%
+        height: 1.4px
+        background: #D0D2D4
+        position: absolute
+        left: 10px
+        top: 8px
+        z-index: 1
+        @include media-breakpoint-down(md)
+            width: 1.4px
+            height: 100%
+            left: 11.4px
+            top: 0
+    // &::after
+    .after
+        content: ""
+        width: 0%
+        height: 1.4px
+        background: $color--main
+        position: absolute
+        left: 0px
+        top: 8px
+        z-index: 2
+        // transition: all .3s
+        // transition-timing-function: ease-out;
+        @include media-breakpoint-up(md)
+            height: 1.4px!important
+        @include media-breakpoint-down(md)
+            width: 1.4px!important
+            top: 0
+            left: 11.4px
+    button
+        position: relative
+        z-index: 10
+        background: none
+        color: inherit
+        border: none
+        padding: 0 !important
+        font: inherit
+        display: inline-block
+        zoom: 1
+        // margin-right: 2px
+        &:focus
+            border: none
+            outline: none
+        // &::before
+        //     content: ""
+        //     height: 1.4px
+        //     width: 0%
+        //     background: $color--main
+        //     position: absolute
+        //     left: 50%
+        //     top: 8px
+        //     z-index: 2
+        // &::after
+        //     content: ""
+        //     height: 1.4px
+        //     width: 0%
+        //     background: $color--main
+        //     position: absolute
+        //     left: 50%
+        //     top: 8px
+        //     z-index: 2
+            
+        &:first-child
+            span
+                margin: 5px 8px
+                margin-left: 0px
+                @include media-breakpoint-down(md)
+                    margin: 5px 8px
+                    margin-top: 0
+        &:nth-last-child(2)
+            margin-right: 0px
+            @include media-breakpoint-down(md)
+                margin-bottom: 0
+            span
+                margin: 5px 8px
+                margin-right: 0px
+                @include media-breakpoint-down(md)
+                    margin: 5px 8px
+                    margin-bottom: 0
+        @include media-breakpoint-down(md)
+            margin-bottom: 6px
+        span
+            background: #D0D2D4
+            width: 8px
+            height: 8px
+            border-radius: 8px
+            display: block
+            margin: 5px 8px
+            transition-delay: 0s
+            // transition: all .3s
+        @include hover()
+            span
+                background: $color--main
+        
+        &.active
+            // &::before
+            //     transition: all 5s
+            //     width: 100%
+            //     @include media-breakpoint-down(md)
+            //         width: 1.4px
+            //         height: 10%
+            // &::after
+            //     transition: all .3s
+            //     width: 100%
+            //     @include media-breakpoint-down(md)
+            //         width: 1.4px
+            //         height: 10%
+            span
+                background: $color--main
+                transition-delay: .3s
+        // &.current
+        //     &::after
+        //         transition: all 6s
+        //         width: 100%

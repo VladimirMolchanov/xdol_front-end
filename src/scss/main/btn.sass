@@ -1,0 +1,101 @@
+.btn-x-default
+    background: none
+    letter-spacing: -0.05px
+    display: inline-block
+    font-family: Klein
+    font-weight: normal
+    font-size: rem(16)
+    line-height: rem(16)
+    text-decoration: none
+    padding-left: 24px
+    padding-top: 11px
+    padding-bottom: 11px
+    padding-right: 24px
+    border-radius: 0px
+    position: relative
+    // width: 100%
+    text-align: left
+    z-index: 1
+    border: 1px solid #D0D2D4
+    color: $color--main
+    .arrow      
+        position: absolute
+        right: 31px
+        top: 23px
+        svg
+            vertical-align: text-top
+            path
+                transition: all .3s;
+    &::after
+        background: $color--main
+        content: ''
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        transition: all .3s
+        width: 0%
+        z-index: -1
+    @include hover()
+        text-decoration: none
+        color: #fff
+        // background-color: #fff
+        // border-color: #fff
+        &::after
+            width: 100%
+        svg
+            path
+                fill: $color--main
+    &.btn-lg
+        padding-left: 32px
+        padding-top: 19px
+        padding-bottom: 19px
+        padding-right: 32px
+    // &::after
+    //     content: ""
+    //     background: url(../img/arrow-while.svg)
+    //     width: 18px
+    //     height: 9px
+    //     position: absolute
+    //     right: 31px
+    //     top: 23px
+    &.btn-submit
+        padding-left: 23px
+        padding-right: 23px 
+        .arrow
+            right: 23px
+
+.btn-arrow-right
+    &.btn-lg
+        padding-right: 32px + 18px + 10px
+.btn-x-default-light
+    color: #fff
+    border-color: #D0D2D4
+    &::after
+        background: #fff
+    @include hover()
+        color: $color--main
+        // background-color: #fff
+        // border-color: #fff
+        &::after
+            width: 100%
+        svg
+            path
+                fill: $color--main
+.btn-x-default-dark
+    color: $color--main
+    border-color: $color--main
+    svg
+        path
+            fill: $color--main
+    &::after
+        background: $color--main
+    @include hover()
+        color: #fff
+        // background-color: #fff
+        // border-color: #fff
+        &::after
+            width: 100%
+        svg
+            path
+                fill: #fff

@@ -1,9 +1,26 @@
 .main-content__heading
-    margin-bottom: 54px
-    @media screen and (max-width: 1330px + 12px)
-        margin-bottom: 29px
+    position: relative
+    margin-bottom: 27px
+    @include media-breakpoint-down(md)
+        margin-bottom: 48px
+    // margin-bottom: 54px
+    // @media screen and (max-width: 1330px + 12px)
+    //     margin-bottom: 29px
+    .image
+        position: absolute
+        bottom: 11px
+        right: 0px
+        @include media-breakpoint-down(md)
+            position: relative
+            bottom: 0
+            right: auto
+            left: 0
+            img
+                @include media-breakpoint-down(md)
+                    width: 145px
     .heading__page-title
         margin: 0px
+        margin-bottom: 54px
         color: #000
         font-size: rem(40)
         line-height: rem(50)
@@ -11,3 +28,24 @@
         @media screen and (max-width: 1330px + 12px)
             font-size: rem(24)
             line-height: rem(32)
+            margin-bottom: 29px
+
+    &.main-content__heading--image
+        .heading__page-title
+            @include media-breakpoint-down(md)
+                margin-bottom: 7px
+        .image
+            @include media-breakpoint-down(md)
+                margin-bottom: 22px
+
+
+.main-content__plug
+    width: 100%
+    height: 192px
+    @include media-breakpoint-down(md)
+        height: 8px
+
+.main-content__home-link + .main-content__plug
+        height: 60px
+        @include media-breakpoint-down(md)
+            height: 0px

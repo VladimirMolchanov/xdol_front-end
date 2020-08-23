@@ -1,0 +1,97 @@
+.main-content__mini-project
+    // display: flex
+    // flex-direction: row-reverse
+    margin-bottom: 200px
+    position: relative
+    @include media-breakpoint-down(md)
+        margin-bottom: 81px
+    a
+        text-decoration: none
+    .main-content__mini-project--image
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        width: 45%
+        display: flex
+        align-items: center
+        overflow: hidden
+        @include media-breakpoint-down(md)
+            display: none
+        .main-content__mini-project--image-item
+            transform: translateX(-100%)
+            transition: all .6s
+            position: absolute
+            z-index: 100
+            &.main
+                transform: translateX(0)
+                position: relative
+                z-index: 10
+            &.open
+                transform: translateX(0%)
+    .main-content__mini-project--body
+        width: 65%
+        max-width: 1235px
+        height: 100%
+        background: #121C26
+        text-align: right
+        position: absolute
+        right: 0
+        top: 0
+        @include media-breakpoint-down(md)
+            width: 100%
+    .main-content__mini-project--content
+        text-align: right
+        // padding-top: 290px
+        // padding-bottom: 289px
+        padding-top: 25%
+        padding-bottom: 25%
+        @include media-breakpoint-down(md)
+            padding-top: 188px
+            padding-bottom: 187px
+    .main-content__mini-project--content-title
+        color: #71777D
+        margin-bottom: 49px
+        font-size: rem(16)
+        line-height: rem(16)
+        @include media-breakpoint-down(md)
+            font-size: rem(14)
+            line-height: rem(16)
+            margin-bottom: 41px
+    .main-content__mini-project--content-link
+        .default-link
+            text-decoration: none
+            @include hover()
+                color: #fff
+    .main-content__mini-project--content-list
+        margin-bottom: 34px
+        @include media-breakpoint-down(md)
+            margin-bottom: 16px
+        .main-content__mini-project--content-list-item
+            font-size: rem(40)
+            line-height: rem(50)
+            font-weight: 500
+            margin-right: 31px
+            margin-bottom: 16px
+            display: inline-block
+            @include media-breakpoint-down(md)
+                font-size: rem(24)
+                line-height: rem(32)
+                margin-right: 18px
+                margin-bottom: 24px
+            &::after
+                content: "/"
+                color: #414951
+                padding-left: 31px
+                @include media-breakpoint-down(md)
+                    padding-left: 19px
+            a
+                color: #71777D
+                font-size: inherit
+                line-height: inherit
+                @include hover()
+                    color: #fff
+            &.last
+                margin-right: 0
+                &::after
+                    content: none
