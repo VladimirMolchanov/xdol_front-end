@@ -1,15 +1,16 @@
 header.main-header
     .d-flex.justify-content-between
         .main-header__logo
-            img(src="img/logo.svg", alt="")
+            a(href="/dist/")
+                img(src="img/logo.svg", alt="")
         .main-header__menu
             menu
                 li
-                    a.active(href="javascript:void(0)") Компания
+                    a.active(href="/dist/company.html") Компания
                 li
-                    a(href="javascript:void(0)") Услуги
+                    a(href="/dist/services.html") Услуги
                 li
-                    a(href="javascript:void(0)") Проекты
+                    a(href="/dist/project.html") Проекты
                 li
                     a(href="javascript:void(0)" data-toggle="modal" data-target="#staticBackdrop") Контакты
 include ../includes/modal.pug
