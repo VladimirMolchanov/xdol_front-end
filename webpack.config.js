@@ -43,15 +43,34 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                include: path.resolve(__dirname, 'src/js'),
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
+                  loader: "babel-loader"
                 }
+            },
+            // {
+            //     test: /\.js$/,
+            //     exclude: /node_modules/,
+            //     include: path.resolve(__dirname, 'src/js'),
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: {
+            //             presets: ['env']
+            //         }
+            //     }
+            // },
+            {
+                test: /\.css$/,
+                use: [
+                  "style-loader",
+                  {
+                    loader: "css-loader",
+                    options: {
+                      modules: true
+                    }
+                  }
+                ]
             },
             {
                 test: /\.(sass|scss)$/,
