@@ -11,6 +11,41 @@ import inputFile from './input-file';
 
 
 
+
+import anime from 'animejs/lib/anime.es.js';
+
+// anime({
+//     targets: '.anime-svg-arrows path',
+//     strokeDashoffset: [anime.setDashoffset, 0],
+//     easing: 'easeInOutSine',
+//     duration: 1500,
+//     delay: function(el, i) { return i * 250 },
+//     direction: 'alternate',
+//     loop: true
+// });
+
+
+
+// tl
+// .add({
+//     targets: '.arrow-animate .step3',
+//     translateX: -60,
+// })
+// .add({
+//     targets: '.arrow-animate .step2',
+//     translateX: -60,
+// })
+// .add({
+//     targets: '.arrow-animate .step1',
+//     translateX: -60,
+// })
+// .add({
+//     targets: '.arrow-animate .step4',
+//     translateX: -60,
+// });
+
+
+
 function padNum(num) {
     return num.toString().padStart(2,0);
 }
@@ -167,18 +202,114 @@ $(document).ready(function(){
     });
 });
 
-// $(document).ready(function(){
-//     var time = null
-//     $(".default-link").on("mouseover", function(e) {
-//         $( this ).addClass("hover").delay(3000).removeClass("hover").addClass("hover")
-//         var n = this
-        
-        
-//     })
-//     $(".default-link").on("mouseout", function(e) {
-//         $( this ).removeClass("hover")
-//         clearInterval(time)
-//     })
+
+
+
+// var tl = anime.timeline({
+//     targets: '.default-link .arrow-animate .step',
+//     easing: 'easeOutExpo',
+//     delay: function(el, i) { return i * 200 },
+//     duration: 350,
+//     loop: true,
+//     autoplay: false,
 // });
+
+// tl
+// .add({
+//     translateX: -60,
+// })
+// .add({
+//     translateX: 60,
+//     duration: 0
+// })
+// .add({
+//     translateX: 0,
+// })
+
+// console.log(tl)
+
+
+$(document).ready(function(){
+    var tl = null
+    $(".default-link").on("mouseover", function(e) {
+        // $( this ).addClass("hover")
+        
+        var targets = "." + $( this ).data("css") + " .step"
+        
+        console.log(targets)
+
+        tl = anime.timeline({
+            targets: targets,
+            easing: 'easeOutExpo',
+            delay: function(el, i) { return i * 200 },
+            duration: 350,
+            loop: true,
+            autoplay: false,
+            endDelay: -200
+        });
+        
+        tl
+        .add({
+            translateX: -60,
+        })
+        .add({
+            translateX: 60,
+            duration: 0
+        })
+        .add({
+            translateX: 0,
+        })
+        tl.play()
+
+        console.log( tl )
+    })
+    $(".default-link").on("mouseout", function(e) {
+        tl.pause()
+        tl.reset()
+    })
+});
+
+
+$(document).ready(function(){
+    var tl = null
+    $(".default-link").on("mouseover", function(e) {
+        // $( this ).addClass("hover")
+        
+        var targets = "." + $( this ).data("css") + " .step"
+        
+        console.log(targets)
+
+        tl = anime.timeline({
+            targets: targets,
+            easing: 'easeOutExpo',
+            delay: function(el, i) { return i * 200 },
+            duration: 350,
+            loop: true,
+            autoplay: false,
+            endDelay: -200
+        });
+        
+        tl
+        .add({
+            translateX: -60,
+        })
+        .add({
+            translateX: 60,
+            duration: 0
+        })
+        .add({
+            translateX: 0,
+        })
+        tl.play()
+
+        console.log( tl )
+    })
+    $(".default-link").on("mouseout", function(e) {
+        tl.pause()
+        tl.reset()
+    })
+});
+
+
 
 import swapToImage from './swap-to-image.js';
