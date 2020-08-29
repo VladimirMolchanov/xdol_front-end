@@ -30,21 +30,31 @@
     "presets": [
       "@babel/env",
       "@babel/react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.17",
+    "@tweenjs/tween.js": "^18.6.0",
     "bootstrap": "^4.5.2",
-    "gsap": "^3.5.0",
+    "fullpage.js": "^3.0.9",
+    "gsap": "^3.5.1",
     "jquery": "^3.5.1",
     "owl.carousel": "^2.3.4",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.13.1",
-    "react-scrollbars-custom": "^4.0.25"
+    "react-scrollbars-custom": "^4.0.25",
+    "three": "^0.120.0",
+    "twgl-base.js": "^4.16.0",
+    "twgl.js": "^4.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "autoprefixer": "^9.8.6",

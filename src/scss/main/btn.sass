@@ -1,4 +1,15 @@
+@keyframes btn-transform 
+    from 
+        transform: translateX(-100%)
+    to 
+        transform: translateX(0%)
+@keyframes btn-transform-2 
+    from 
+        transform: translateX(0%)
+    to 
+        transform: translateX(100%)
 .btn-x-default
+    overflow: hidden
     background: none
     letter-spacing: -0.05px
     display: inline-block
@@ -33,9 +44,11 @@
         left: 0
         position: absolute
         top: 0
-        transition: all .3s
-        width: 0%
+        // transition: all .3s
+        width: 100%
         z-index: -1
+        transform: translateX(100%)
+        animation: btn-transform-2 .3s ease-in-out
     @include hover()
         text-decoration: none
         color: #fff
@@ -43,6 +56,9 @@
         // border-color: #fff
         &::after
             width: 100%
+            transform: translateX(0%)
+            animation: btn-transform .3s ease-in-out
+            
         svg
             path
                 fill: $color--main
@@ -79,6 +95,8 @@
         // border-color: #fff
         &::after
             width: 100%
+            transform: translateX(0%)
+            animation: btn-transform .3s ease-in-out
         svg
             path
                 fill: $color--main
@@ -96,6 +114,8 @@
         // border-color: #fff
         &::after
             width: 100%
+            transform: translateX(0%)
+            animation: btn-transform .3s ease-in-out
         svg
             path
                 fill: #fff

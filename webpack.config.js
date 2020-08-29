@@ -107,12 +107,25 @@ module.exports = {
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                include: path.resolve(__dirname, 'src/fonts'),
                 use: [
                   {
                     loader: 'file-loader',
                     options: {
                       name: '[name].[ext]',
                       outputPath: 'fonts/'
+                    }
+                  }
+                ]
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: 'img/'
                     }
                   }
                 ]

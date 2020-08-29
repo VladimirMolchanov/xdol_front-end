@@ -16,6 +16,8 @@
         display: flex
         align-items: center
         overflow: hidden
+        padding-top: 150px
+        padding-bottom: 150px
         @include media-breakpoint-down(md)
             display: none
         .main-content__mini-project--image-item
@@ -63,6 +65,10 @@
             text-decoration: none
             @include hover()
                 color: #fff
+            svg
+                path
+                    fill: #fff
+                    stroke: #fff
     .main-content__mini-project--content-list
         margin-bottom: 34px
         @include media-breakpoint-down(md)

@@ -12,6 +12,7 @@
     .select
         position: relative
     .new-select
+        background: #fff
         font-size: rem(16)
         line-height: rem(16)
         color: $color--main
@@ -53,8 +54,10 @@
             .after
                 padding-left: 16px
                 padding-right: 16px
+            &::after
+                transform: rotate(180deg)
     .new-select__list
-        background: #E5E5E5
+        background: #fff
         position: absolute
         width: 100%
         z-index: 10

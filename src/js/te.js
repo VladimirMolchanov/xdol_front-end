@@ -8,7 +8,7 @@ import 'fullpage.js/vendors/scrolloverflow';
 
 import inputSelect from './input-select';
 import inputFile from './input-file';
-
+import swapToImage from './swap-to-image.js';
 
 
 function padNum(num) {
@@ -23,12 +23,11 @@ $(document).ready(function(){
     // });
     // $.fn.fullpage.setAllowScrolling(false);
 
-    new fullpage('#fullpage', {
-        autoScrolling:true,
-        scrollHorizontally: true,
-        scrollOverflow: true,
-        verticalCentered: true,
-    });
+    // new fullpage('#fullpage', {
+    //     autoScrolling:true,
+    //     scrollHorizontally: true,
+    //     scrollOverflow: true
+    // });
     
     var owl = $('.owl-carousel').owlCarousel({
         loop:true,
@@ -166,19 +165,3 @@ $(document).ready(function(){
         owl.trigger('to.owl.carousel', [jQuery(this).index(), 300]);
     });
 });
-
-// $(document).ready(function(){
-//     var time = null
-//     $(".default-link").on("mouseover", function(e) {
-//         $( this ).addClass("hover").delay(3000).removeClass("hover").addClass("hover")
-//         var n = this
-        
-        
-//     })
-//     $(".default-link").on("mouseout", function(e) {
-//         $( this ).removeClass("hover")
-//         clearInterval(time)
-//     })
-// });
-
-import swapToImage from './swap-to-image.js';

@@ -35,18 +35,19 @@ html(lang="ru")
             .main-content__mini-project
                 .main-content__mini-project--body
                 .main-content__mini-project--image
-                    .main-content__mini-project--image-item.main#project1
-                        img(src="./uploads/image.png", alt="").img-fluid
-                    .main-content__mini-project--image-item#project2
-                        img(src="./uploads/image.png", alt="").img-fluid
-                    .main-content__mini-project--image-item#project3
-                        img(src="./uploads/image.png", alt="").img-fluid
-                    .main-content__mini-project--image-item#project4
-                        img(src="./uploads/image.png", alt="").img-fluid
-                    .main-content__mini-project--image-item#project5
-                        img(src="./uploads/image.png", alt="").img-fluid
-                    .main-content__mini-project--image-item#project6
-                        img(src="./uploads/image.png", alt="").img-fluid
+                    canvas#canvas.image-swapper
+                    //- .main-content__mini-project--image-item.main#project1
+                    //-     img(src="./uploads/image.png", alt="").img-fluid
+                    //- .main-content__mini-project--image-item#project2
+                    //-     img(src="./uploads/image.png", alt="").img-fluid
+                    //- .main-content__mini-project--image-item#project3
+                    //-     img(src="./uploads/image.png", alt="").img-fluid
+                    //- .main-content__mini-project--image-item#project4
+                    //-     img(src="./uploads/image.png", alt="").img-fluid
+                    //- .main-content__mini-project--image-item#project5
+                    //-     img(src="./uploads/image.png", alt="").img-fluid
+                    //- .main-content__mini-project--image-item#project6
+                    //-     img(src="./uploads/image.png", alt="").img-fluid
                 .container
                     .row
                         .col-12
@@ -55,19 +56,19 @@ html(lang="ru")
                                     span Последние проекты
                                 .main-content__mini-project--content-list
                                     .main-content__mini-project--content-list-item#link-project1(data-project="project1")
-                                        a(href="javascript:void(0)") JPMorgan Chase
+                                        a(href="javascript:void(0)")#img1 JPMorgan Chase
                                     .main-content__mini-project--content-list-item.last#link-project2(data-project="project2")
-                                        a(href="javascript:void(0)") AT&T
+                                        a(href="javascript:void(0)")#img2 AT&T
                                     br
                                     .main-content__mini-project--content-list-item#link-project3(data-project="project3")
-                                        a(href="javascript:void(0)") IBM
+                                        a(href="javascript:void(0)")#img3 IBM
                                     .main-content__mini-project--content-list-item.last#link-project4(data-project="project4")
-                                        a(href="javascript:void(0)") Microsoft
+                                        a(href="javascript:void(0)")#img4 Microsoft
                                     br
                                     .main-content__mini-project--content-list-item#link-project5(data-project="project5")
-                                        a(href="javascript:void(0)") Intel
+                                        a(href="javascript:void(0)")#img5 Intel
                                     .main-content__mini-project--content-list-item.last#link-project6(data-project="project6")
-                                        a(href="javascript:void(0)") United Technologies
+                                        a(href="javascript:void(0)")#img6 United Technologies
                                 .main-content__mini-project--content-link
                                     a(href="javascript:void(0)").default-link 
                                         <svg width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg">

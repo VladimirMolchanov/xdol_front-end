@@ -1,6 +1,6 @@
 import React, { Component, createRef  } from "react";
 import Scrollbar from "react-scrollbars-custom";
-
+import ReactFullpage from '@fullpage/react-fullpage';
 class CustomScrollBar extends Component {
   constructor(props) {
     super(props);
@@ -78,12 +78,60 @@ class MyComponent extends Component {
       //   <section style={{ background: "#000", width: "100%", height: "100vh"}}></section>
       // </MyScrollbar>
 
-      <CustomScrollBar style={{ width: "100vw", height: "100vh" }}>
-        <div className="jsx-1516242326" style={{ background: "red", width: "100%", height: "100vh"}}></div>
-        <div className="jsx-1516242326" style={{ background: "blue", width: "100%", height: "100vh"}}></div>
-        <div className="jsx-1516242326" style={{ background: "#eee", width: "100%", height: "100vh"}}></div>
-        <div className="jsx-1516242326" style={{ background: "#000", width: "100%", height: "100vh"}}></div>
-      </CustomScrollBar>
+      // <CustomScrollBar style={{ width: "100vw", height: "100vh" }}>
+      //   <div className="jsx-1516242326" style={{ background: "red", width: "100%", height: "100vh"}}></div>
+      //   <div className="jsx-1516242326" style={{ background: "blue", width: "100%", height: "100vh"}}></div>
+      //   <div className="jsx-1516242326" style={{ background: "#eee", width: "100%", height: "100vh"}}></div>
+      //   <div className="jsx-1516242326" style={{ background: "#000", width: "100%", height: "100vh"}}></div>
+      // </CustomScrollBar>
+
+      <ReactFullpage scrollingSpeed = {1000} scrollOverflow={true}
+
+      render={({ state, fullpageApi }) => {
+        return (
+          <ReactFullpage.Wrapper>
+            <div className="section">
+              <p>Section 1 (welcome to fullpage.js)</p>
+              <button onClick={() => fullpageApi.moveSectionDown()}>
+                Click me to move down
+              </button>
+            </div>
+            <div className="section">
+              <div style={{ background: "red", width: "100%", height: 2000}}>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+              </div>
+            </div>
+          </ReactFullpage.Wrapper>
+        );
+      }}
+      />
     )
   }
 }
