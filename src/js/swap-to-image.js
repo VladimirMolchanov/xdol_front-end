@@ -262,7 +262,7 @@ class SceneManager {
 /* Init stuff */
 const sceneManager = new SceneManager({
     canvas: document.getElementById('canvas'),
-    images: ["/uploads/image.png", "/uploads/1.jpg", "/uploads/2.jpg", "/uploads/3.jpg", "/uploads/4.jpg"],
+    images: ["./uploads/image.png", "./uploads/1.jpg", "./uploads/2.jpg", "./uploads/3.jpg", "./uploads/4.jpg"],
     displacementMap: "/uploads/clouds.jpg",
     duration: 0.750,
 })

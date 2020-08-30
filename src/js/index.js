@@ -63,6 +63,14 @@ $(document).ready(function(){
         scrollHorizontally: true,
         scrollOverflow: true,
         verticalCentered: true,
+        dragAndMove: false,
+        scrollOverflowReset: true,
+        scrollOverflowOptions: {
+            click: false,
+            disableMouse: true,
+            disablePointer: true,
+            disableTouch: true
+        }
     });
     
     var owl = $('.owl-carousel').owlCarousel({

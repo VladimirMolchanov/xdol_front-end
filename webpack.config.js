@@ -25,11 +25,13 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views')
 module.exports = {
     entry: {
         app: './src/js/index.js',
+        second: './src/js/second.js',
         style: './src/scss/index.sass'
     },
     output: {
         filename: './js/[name].js',
         path: path.resolve(__dirname, './dist'),
+        // publicPath: "/"
     },
     devServer: {
         port: 8081,
@@ -66,7 +68,7 @@ module.exports = {
                   {
                     loader: "css-loader",
                     options: {
-                      modules: true
+                        modules: true
                     }
                   }
                 ]
