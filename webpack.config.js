@@ -31,7 +31,7 @@ module.exports = {
     output: {
         filename: './js/[name].js',
         path: path.resolve(__dirname, './dist'),
-        // publicPath: "/"
+        publicPath: "/"
     },
     devServer: {
         port: 8081,
@@ -120,7 +120,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png|svg)$/,
+                test: /\.(jpg|png|svg|gif)$/,
                 use: [
                   {
                     loader: 'file-loader',

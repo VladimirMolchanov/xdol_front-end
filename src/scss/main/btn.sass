@@ -1,13 +1,17 @@
 @keyframes btn-transform 
     from 
         transform: translateX(-100%)
+        
     to 
         transform: translateX(0%)
+        
 @keyframes btn-transform-2 
     from 
         transform: translateX(0%)
+        opacity: 1
     to 
         transform: translateX(100%)
+        opacity: 1
 .btn-x-default
     overflow: hidden
     background: none
@@ -29,6 +33,7 @@
     z-index: 1
     border: 1px solid #D0D2D4
     color: $color--main
+    transition: color .5s
     .arrow      
         position: absolute
         right: 31px
@@ -36,7 +41,7 @@
         svg
             vertical-align: text-top
             path
-                transition: all .3s;
+                transition: all .5s;
     &::after
         background: $color--main
         content: ''
@@ -47,8 +52,23 @@
         // transition: all .3s
         width: 100%
         z-index: -1
-        transform: translateX(100%)
-        animation: btn-transform-2 .3s ease-in-out
+        transform: translateX(-100%)
+        // animation: btn-transform-2 .3s ease-in-out
+        // animation-fill-mode: forwards
+        opacity: 0
+    .after
+        background: $color--main
+        content: ''
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        // transition: all .3s
+        width: 100%
+        z-index: -1
+        transform: translateX(-100%)
+        // animation: btn-transform-2 .3s ease-in-out
+        // animation-fill-mode: forwards
     @include hover()
         text-decoration: none
         color: #fff
@@ -56,9 +76,10 @@
         // border-color: #fff
         &::after
             width: 100%
-            transform: translateX(0%)
-            animation: btn-transform .3s ease-in-out
-            
+            // transform: translateX(0%)
+            // animation: btn-transform .3s ease-in-out
+            // animation-fill-mode: forwards
+            opacity: 1
         svg
             path
                 fill: $color--main
@@ -89,14 +110,16 @@
     border-color: #D0D2D4
     &::after
         background: #fff
+    .after
+        background: #fff
     @include hover()
         color: $color--main
         // background-color: #fff
         // border-color: #fff
         &::after
             width: 100%
-            transform: translateX(0%)
-            animation: btn-transform .3s ease-in-out
+            // transform: translateX(0%)
+            // animation: btn-transform .3s ease-in-out
         svg
             path
                 fill: $color--main
@@ -108,14 +131,44 @@
             fill: $color--main
     &::after
         background: $color--main
+    .after
+        background: $color--main
     @include hover()
         color: #fff
         // background-color: #fff
         // border-color: #fff
         &::after
             width: 100%
-            transform: translateX(0%)
-            animation: btn-transform .3s ease-in-out
+            // transform: translateX(0%)
+            // animation: btn-transform .3s ease-in-out
         svg
             path
                 fill: #fff
+
+
+.btn-x-default-v2
+    overflow: hidden
+    background: none
+    letter-spacing: -0.05px
+    display: inline-block
+    font-family: Klein
+    font-weight: normal
+    font-size: rem(16)
+    line-height: rem(16)
+    text-decoration: none
+    padding-left: 24px
+    padding-top: 11px
+    padding-bottom: 11px
+    padding-right: 24px
+    border-radius: 0px
+    position: relative
+    // width: 100%
+    text-align: left
+    z-index: 1
+    border: 1px solid #D0D2D4
+    color: $color--main
+    transition: all .2s
+    @include hover()
+        background: $color--main
+        text-decoration: none
+        color: #fff

@@ -5,10 +5,12 @@ a
     color: $color--secondary
     font-size: rem(16)
     line-height: rem(16)
+    text-decoration: none
     @include media-breakpoint-down(md)
         font-size: rem(14)
     &:hover
         color: $color--main
+        text-decoration: none
     &.default-link
         svg
             transform: rotate(180deg)
@@ -99,16 +101,34 @@ button
 //         animation-delay: 5s
 //     to 
 //         transform: translateX(0)
-@keyframes step1
+// @keyframes step1
+//     from 
+//         transform: translateX(0)
+//     to 
+//         transform: translateX(-58px)
+// @keyframes step2
+//     from 
+//         transform: translateX(58px)
+//     to 
+//         transform: translateX(0)
+
+@keyframes arrows
     from 
         transform: translateX(0)
-    to 
+    50%
         transform: translateX(-58px)
-@keyframes step2
-    from 
-        transform: translateX(58px)
+    51%
+        transform: translateX(58px)  
     to 
         transform: translateX(0)
+
+.default-link
+    .arrow-animate
+    @include hover()
+        .arrow-animate
+            .arrows
+                animation: arrows 0.5s ease-in-out
+
 // .default-link
 //     @include hover()
 //         .arrow-animate

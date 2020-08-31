@@ -1,9 +1,10 @@
 import $ from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
+import 'fullpage.js/vendors/scrolloverflow';
+import 'fullpage.js/vendors/easings';
 import fullpage from 'fullpage.js';
 import 'owl.carousel';
-import 'fullpage.js/vendors/scrolloverflow';
 
 
 import inputSelect from './input-select';
@@ -14,41 +15,40 @@ import inputFile from './input-file';
 
 import anime from 'animejs/lib/anime.es.js';
 
-// anime({
-//     targets: '.anime-svg-arrows path',
-//     strokeDashoffset: [anime.setDashoffset, 0],
-//     easing: 'easeInOutSine',
-//     duration: 1500,
-//     delay: function(el, i) { return i * 250 },
-//     direction: 'alternate',
-//     loop: true
-// });
-
-
-
-// tl
-// .add({
-//     targets: '.arrow-animate .step3',
-//     translateX: -60,
-// })
-// .add({
-//     targets: '.arrow-animate .step2',
-//     translateX: -60,
-// })
-// .add({
-//     targets: '.arrow-animate .step1',
-//     translateX: -60,
-// })
-// .add({
-//     targets: '.arrow-animate .step4',
-//     translateX: -60,
-// });
-
-
-
 function padNum(num) {
     return num.toString().padStart(2,0);
 }
+
+import { gsap } from "gsap";
+
+$(document).ready(function(){
+    window.animgsap = gsap.to(".btn-x-default .after", {
+        x: "100%", 
+        paused: true
+    })
+});
+
+var animateBtn = null
+var flag = true
+$(".btn-x-default").hover(function() {
+    animateBtn = gsap.timeline()
+    animateBtn  
+        .to( $(this).find('.after'), {
+            x: "-100%", 
+            duration: "0"
+        })
+        .to( $(this).find('.after'), {
+            x: "0", 
+            duration: "0.5"
+        })
+}, function() {
+    animateBtn.to( $(this).find('.after'), {
+        x: "100%", 
+    })
+})
+// $(".btn-x-default").hover(function() {
+    
+// })
 
 $(document).ready(function(){
     // $('#fullpage').fullpage({
@@ -58,18 +58,27 @@ $(document).ready(function(){
     // });
     // $.fn.fullpage.setAllowScrolling(false);
 
-    new fullpage('#fullpage', {
+    var temp = new fullpage('#fullpage', {
         autoScrolling:true,
         scrollHorizontally: true,
         scrollOverflow: true,
         verticalCentered: true,
         dragAndMove: false,
         scrollOverflowReset: true,
+        scrollingSpeed: 700,
+        bounceEasing: {
+            style: 'cubic-bezier(0,0,1,1)',
+            fn: function (k) { return k; }
+        },
         scrollOverflowOptions: {
+            mouseWheel: true,
             click: false,
             disableMouse: true,
             disablePointer: true,
-            disableTouch: true
+            disableTouch: true,
+            bounceTime: 600,
+            deceleration: 0.1,
+            mouseWheelSpeed: 20
         }
     });
     
@@ -115,6 +124,7 @@ $(document).ready(function(){
         //     dots.find(".after").css("transition", "all .3s")
         // },    
         onInitialized: (event) => {
+            var namespace = event.namespace;
             var element   = event.target
             var items     = event.item.count;
             var nav = $(element).find(".owl-nav")
@@ -131,6 +141,46 @@ $(document).ready(function(){
                 "width": ((1) * (100/(items-1))) + 1  + "%", 
                 "height": ((1) * (100/(items-1))) + 1  + "%"
             }, 6500)
+
+            $(event.target).append('\
+                <div class="owl-main-item--link">\
+                    <a href="javascript:void(0)" class="default-link">\
+                        <svg class="arrow-animate" width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg">\
+                            <g class="arrows">\
+                                <g class="step step3">\
+                                    <path d="M8.77344 12.5859L1.17969 9V8.15625L8.77344 4.57812V6.11719L3.27344 8.58594L8.77344 11.0469V12.5859Z" fill="#121C26"/>\
+                                </g>\
+                                <g class="step step2">\
+                                    <path d="M17.5078 12.5859L9.91406 9V8.15625L17.5078 4.57812V6.11719L12.0078 8.58594L17.5078 11.0469V12.5859Z" fill="#121C26"/>\
+                                </g>\
+                                <g class="step step1">\
+                                    <path d="M26.2422 12.5859 L18.6484 9 V8.15625 L26.2422 4.57812 V6.11719 L20.7422 8.58594 L26.2422 11.0469 V12.5859Z" fill="#121C26"/>\
+                                </g>\
+                                <path class="step step4" d="M31 8H58" stroke="#121C26" stroke-width="1.4"/>\
+                            </g>\
+                        </svg>\
+                        <span>Проекты</span>\
+                    </a>\
+                    <a href="javascript:void(0)" class="default-link">\
+                        <svg class="arrow-animate" width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg">\
+                            <g class="arrows">\
+                                <g class="step step3">\
+                                    <path d="M8.77344 12.5859L1.17969 9V8.15625L8.77344 4.57812V6.11719L3.27344 8.58594L8.77344 11.0469V12.5859Z" fill="#121C26"/>\
+                                </g>\
+                                <g class="step step2">\
+                                    <path d="M17.5078 12.5859L9.91406 9V8.15625L17.5078 4.57812V6.11719L12.0078 8.58594L17.5078 11.0469V12.5859Z" fill="#121C26"/>\
+                                </g>\
+                                <g class="step step1">\
+                                    <path d="M26.2422 12.5859 L18.6484 9 V8.15625 L26.2422 4.57812 V6.11719 L20.7422 8.58594 L26.2422 11.0469 V12.5859Z" fill="#121C26"/>\
+                                </g>\
+                                <path class="step step4" d="M31 8H58" stroke="#121C26" stroke-width="1.4"/>\
+                            </g>\
+                        </svg>\
+                        <span>Начать разработку</span>\
+                    </a>\
+                </div>\
+            ')
+            
         },
         onTranslate: (event) => {
             var element = event.target
@@ -237,87 +287,92 @@ $(document).ready(function(){
 // console.log(tl)
 
 
-$(document).ready(function(){
-    var tl = null
-    $(".default-link").on("mouseover", function(e) {
-        // $( this ).addClass("hover")
+// $(document).ready(function(){
+//     var tl = null
+//     $(".default-link").on("mouseover", function(e) {
+//         // $( this ).addClass("hover")
         
-        var targets = "." + $( this ).data("css") + " .step"
+//         var targets = "." + $( this ).data("css") + " .step"
         
-        console.log(targets)
+//         console.log(targets)
 
-        tl = anime.timeline({
-            targets: targets,
-            easing: 'easeOutExpo',
-            delay: function(el, i) { return i * 200 },
-            duration: 350,
-            loop: true,
-            autoplay: false,
-            endDelay: -200
-        });
+//         tl = anime.timeline({
+//             targets: targets,
+//             easing: 'easeOutExpo',
+//             delay: function(el, i) { return i * 200 },
+//             duration: 350,
+//             loop: true,
+//             autoplay: false,
+//             endDelay: -200
+//         });
         
-        tl
-        .add({
-            translateX: -60,
-        })
-        .add({
-            translateX: 60,
-            duration: 0
-        })
-        .add({
-            translateX: 0,
-        })
-        tl.play()
+//         tl
+//         .add({
+//             translateX: -60,
+//         })
+//         .add({
+//             translateX: 60,
+//             duration: 0
+//         })
+//         .add({
+//             translateX: 0,
+//         })
+//         tl.play()
 
-        console.log( tl )
-    })
-    $(".default-link").on("mouseout", function(e) {
-        tl.pause()
-        tl.reset()
-    })
-});
+//         console.log( tl )
+//     })
+//     $(".default-link").on("mouseout", function(e) {
+//         tl.pause()
+//         tl.reset()
+//     })
+// });
 
 
-$(document).ready(function(){
-    var tl = null
-    $(".default-link").on("mouseover", function(e) {
-        // $( this ).addClass("hover")
+// $(document).ready(function(){
+//     var tl = null
+//     $(".default-link").on("mouseover", function(e) {
+//         // $( this ).addClass("hover")
         
-        var targets = "." + $( this ).data("css") + " .step"
+//         var targets = "." + $( this ).data("css") + " .step"
         
-        console.log(targets)
+//         console.log(targets)
 
-        tl = anime.timeline({
-            targets: targets,
-            easing: 'easeOutExpo',
-            delay: function(el, i) { return i * 200 },
-            duration: 350,
-            loop: true,
-            autoplay: false,
-            endDelay: -200
-        });
+//         tl = anime.timeline({
+//             targets: targets,
+//             easing: 'easeOutExpo',
+//             delay: function(el, i) { return i * 200 },
+//             duration: 350,
+//             loop: true,
+//             autoplay: false,
+//             endDelay: -200
+//         });
         
-        tl
-        .add({
-            translateX: -60,
-        })
-        .add({
-            translateX: 60,
-            duration: 0
-        })
-        .add({
-            translateX: 0,
-        })
-        tl.play()
+//         tl
+//         .add({
+//             translateX: -60,
+//         })
+//         .add({
+//             translateX: 60,
+//             duration: 0
+//         })
+//         .add({
+//             translateX: 0,
+//         })
+//         tl.play()
 
-        console.log( tl )
-    })
-    $(".default-link").on("mouseout", function(e) {
-        tl.pause()
-        tl.reset()
-    })
-});
+//         console.log( tl )
+//     })
+//     $(".default-link").on("mouseout", function(e) {
+//         tl.pause()
+//         tl.reset()
+//     })
+// });
 
 
 
+
+
+import line from './line';
 import swapToImage from './swap-to-image.js';
+
+
