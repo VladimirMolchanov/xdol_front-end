@@ -1,3 +1,4 @@
+include ../mixins/further.pug
 doctype html
 html(lang="ru")
     include ../includes/head.pug
@@ -20,7 +21,7 @@ html(lang="ru")
                                     input.form-control(type="text" value="Дмитрий")
                                 .form-group.form-group-inline
                                     label.text-x-secondary Ваш телефон
-                                    input.form-control(type="text")
+                                    input#inputPhone.form-control(type="text" placeholder="+7(___) ___-__-__")
                                 .form-group.form-group-inline.feedback__form-email
                                     label.text-x-secondary Ваша эл. почта
                                     input.form-control(type="text")
@@ -28,8 +29,10 @@ html(lang="ru")
                                     textarea(name="q", cols="30", rows="10" placeholder="Опишите задачу или прикрепите файл с описанием")
                                 .form-group.feedback__form-file
                                     .input-file
+                                        
                                         input#file(type="file").field__file
                                         label(for="file")
+                                            .after
                                             .field__file-fake
                                                 .field__file-fake--close
                                                     <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,10 +47,11 @@ html(lang="ru")
                                                 span Добавить файл
                                 .form-group.feedback__form-group-polity
                                     span Нажимая на кнопку вы соглашаетесь с политикой
-                                    span.text-x-secondary  обработки персональных данных
+                                    a(href="javascript:void(0)").text-x-secondary  обработки персональных данных
                                 .form-group
                                     button.btn-x-default.btn-x-default-dark.btn-arrow-right.btn-lg.btn-submit
                                         span Отправить запрос
+                                        .after
                                         .arrow
                                             <svg width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M0.757814 8.58594L8.35156 5L8.35156 4.15625L0.757813 0.578125L0.757813 2.11719L6.25781 4.58594L0.757813 7.04687L0.757814 8.58594ZM9.49219 8.58594L17.0859 5L17.0859 4.15625L9.49219 0.578124L9.49219 2.11719L14.9922 4.58594L9.49219 7.04687L9.49219 8.58594Z" fill="white"/>

@@ -5,32 +5,24 @@ import 'fullpage.js/vendors/scrolloverflow';
 import 'fullpage.js/vendors/easings';
 import fullpage from 'fullpage.js';
 import 'owl.carousel';
-
+import line from './animate-lines';
+import swapToImage from './swap-to-image.js';
 
 import inputSelect from './input-select';
 import inputFile from './input-file';
-
-
-
-
-import anime from 'animejs/lib/anime.es.js';
+import { gsap } from "gsap";
+import 'jquery.maskedinput/src/jquery.maskedinput'
 
 function padNum(num) {
     return num.toString().padStart(2,0);
 }
 
-import { gsap } from "gsap";
 
-$(document).ready(function(){
-    window.animgsap = gsap.to(".btn-x-default .after", {
-        x: "100%", 
-        paused: true
-    })
-});
+
 
 var animateBtn = null
-var flag = true
-$(".btn-x-default").hover(function() {
+
+$(".btn-x-default-light").hover(function() {
     animateBtn = gsap.timeline()
     animateBtn  
         .to( $(this).find('.after'), {
@@ -41,22 +33,75 @@ $(".btn-x-default").hover(function() {
             x: "0", 
             duration: "0.5"
         })
+        .to( $(this), {
+            color: "#121C26", 
+            duration: "0.5"
+        }, "<-1")
 }, function() {
     animateBtn.to( $(this).find('.after'), {
         x: "100%", 
     })
+    .to( $(this), {
+        color: "#FFFFFF", 
+        duration: "0.5"
+    }, "<-1")
 })
-// $(".btn-x-default").hover(function() {
+
+
+var animateBtn1 = null
+$(".btn-x-default-dark").hover(function() {
     
-// })
+    animateBtn1 = gsap.timeline()
+    animateBtn1  
+        .to( $(this).find('.after'), {
+            x: "-100%", 
+            duration: "0"
+        })
+        .to( $(this).find('.after'), {
+            x: "0", 
+            duration: "0.5"
+        })
+        .to( $(this), {
+            color: "#FFFFFF", 
+            duration: "0.5"
+        }, "<-1")
+}, function() {
+    animateBtn1.to( $(this).find('.after'), {
+        x: "100%", 
+    })
+    .to( $(this), {
+        color: "#121C26", 
+        duration: "0.5"
+    }, "<-1")
+})
+
+var animateBtn2 = null
+$(".input-file").hover(function() {
+    animateBtn2 = gsap.timeline()
+    animateBtn2  
+        .to( $(this).find('.after'), {
+            x: "-100%", 
+            duration: "0"
+        })
+        .to( $(this).find('.after'), {
+            x: "0", 
+            duration: "0.5"
+        })
+        .to( $(this), {
+            color: "#FFFFFF", 
+            duration: "0.5"
+        }, "<-1")
+}, function() {
+    animateBtn2.to( $(this).find('.after'), {
+        x: "100%", 
+    })
+    .to( $(this), {
+        color: "#121C26", 
+        duration: "0.5"
+    }, "<-1")
+})
 
 $(document).ready(function(){
-    // $('#fullpage').fullpage({
-	// 	//options here
-	// 	autoScrolling:true,
-	// 	scrollHorizontally: true
-    // });
-    // $.fn.fullpage.setAllowScrolling(false);
 
     var temp = new fullpage('#fullpage', {
         autoScrolling:true,
@@ -119,10 +164,6 @@ $(document).ready(function(){
                 stagePadding: 380,
             },
         },
-        // onChange: (event) => {
-        //     var dots = $(".owl-custom-dots")
-        //     dots.find(".after").css("transition", "all .3s")
-        // },    
         onInitialized: (event) => {
             var namespace = event.namespace;
             var element   = event.target
@@ -134,9 +175,6 @@ $(document).ready(function(){
             var current = dots.children()
             $(current[0]).addClass("active")
 
-            // dots.find(".after").css("width", (1) * (100/(items-1))  + "%")
-            // dots.find(".after").css("height", (1) * (100/(items-1))  + "%")
-            // dots.find(".after").css("transition", "all 5s")
             dots.find(".after").stop().animate({
                 "width": ((1) * (100/(items-1))) + 1  + "%", 
                 "height": ((1) * (100/(items-1))) + 1  + "%"
@@ -196,16 +234,6 @@ $(document).ready(function(){
                 $(current[i]).addClass("active")
             }
             dots.find(".after").stop()
-            // dots.find(".after").css("transition", "all .3s")
-            // dots.find(".after").stop().animate({
-            //     "width": (count-1) * (100/(items-1))  + "%", 
-            //     "height": (count-1) * (100/(items-1))  + "%"
-            // }, 300)
-            // dots.find(".after").css("height", (count-1) * (100/(items-1))  + "%")
-            // if(count == 1) 
-            //     dots.find(".after").css("transition", "all 0s")
-            // else
-            //     dots.find(".after").css("transition", "all .3s")
             if(count == 1) 
                 dots.find(".after").stop().animate({
                     "width": ((count-1) * (100/(items-1))) + 1  + "%", 
@@ -221,16 +249,6 @@ $(document).ready(function(){
             var element = event.target
             var items     = event.item.count;
             var menuCounterThis = $(element).find(".curent")
-            // var menuCloned = $(this).find('.cloned').length // Количество клонированных элементов
-            // var menuIndex = event.item.index // Номер текущего слайда
-            // var menuCount = event.item.count // Общее количество слайдов (без клонированных)
-            // if ( menuIndex > menuCount ) {
-            //     menuCounterThis.text( padNum(menuIndex - menuCloned + ( menuCloned - menuCount ))  );
-            // } else {
-            //     menuCounterThis.text( padNum(menuIndex) );
-            // }
-
-            // menuCounterTotal.text( padNum(menuCount) );
             var count = ++event.page.index
             var dots = $(".owl-custom-dots")
             var current = dots.children()
@@ -240,10 +258,6 @@ $(document).ready(function(){
             });
             $(current[count]).addClass("current")
             
-            
-            // dots.find(".after").css("width", (count) * (100/(items-1))  + "%")
-            // dots.find(".after").css("height", (count) * (100/(items-1))  + "%")
-            // dots.find(".after").css("transition", "all 8s")
             dots.find(".after").stop().animate({
                 "width": ((count-1) * (100/(items-1))) + 1 + "%", 
                 "height": ((count-1) * (100/(items-1))) + 1  + "%"
@@ -263,116 +277,13 @@ $(document).ready(function(){
 
 
 
-// var tl = anime.timeline({
-//     targets: '.default-link .arrow-animate .step',
-//     easing: 'easeOutExpo',
-//     delay: function(el, i) { return i * 200 },
-//     duration: 350,
-//     loop: true,
-//     autoplay: false,
-// });
+$(document).ready(function(){
 
-// tl
-// .add({
-//     translateX: -60,
-// })
-// .add({
-//     translateX: 60,
-//     duration: 0
-// })
-// .add({
-//     translateX: 0,
-// })
+    $("#inputPhone").mask("+7(999) 999-99-99")
 
-// console.log(tl)
-
-
-// $(document).ready(function(){
-//     var tl = null
-//     $(".default-link").on("mouseover", function(e) {
-//         // $( this ).addClass("hover")
-        
-//         var targets = "." + $( this ).data("css") + " .step"
-        
-//         console.log(targets)
-
-//         tl = anime.timeline({
-//             targets: targets,
-//             easing: 'easeOutExpo',
-//             delay: function(el, i) { return i * 200 },
-//             duration: 350,
-//             loop: true,
-//             autoplay: false,
-//             endDelay: -200
-//         });
-        
-//         tl
-//         .add({
-//             translateX: -60,
-//         })
-//         .add({
-//             translateX: 60,
-//             duration: 0
-//         })
-//         .add({
-//             translateX: 0,
-//         })
-//         tl.play()
-
-//         console.log( tl )
-//     })
-//     $(".default-link").on("mouseout", function(e) {
-//         tl.pause()
-//         tl.reset()
-//     })
-// });
-
-
-// $(document).ready(function(){
-//     var tl = null
-//     $(".default-link").on("mouseover", function(e) {
-//         // $( this ).addClass("hover")
-        
-//         var targets = "." + $( this ).data("css") + " .step"
-        
-//         console.log(targets)
-
-//         tl = anime.timeline({
-//             targets: targets,
-//             easing: 'easeOutExpo',
-//             delay: function(el, i) { return i * 200 },
-//             duration: 350,
-//             loop: true,
-//             autoplay: false,
-//             endDelay: -200
-//         });
-        
-//         tl
-//         .add({
-//             translateX: -60,
-//         })
-//         .add({
-//             translateX: 60,
-//             duration: 0
-//         })
-//         .add({
-//             translateX: 0,
-//         })
-//         tl.play()
-
-//         console.log( tl )
-//     })
-//     $(".default-link").on("mouseout", function(e) {
-//         tl.pause()
-//         tl.reset()
-//     })
-// });
-
-
-
-
-
-import line from './line';
-import swapToImage from './swap-to-image.js';
-
-
+    $(".main-content__mini-project--content-list").hover(function() {
+        $(".main-content__mini-project--content-list-item a").addClass("active")
+    }, function() {
+        $(".main-content__mini-project--content-list-item a").removeClass("active")
+    })
+});

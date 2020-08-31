@@ -19,6 +19,9 @@ $(function() {
             class: 'after'
         }).appendTo(selectHead);
         const after = selectHead.find('.after');
+        // $('<div>', {
+        //     class: 'arrows'
+        // }).appendTo(selectHead);
         $('<div>', {
             class: 'fill'
         }).appendTo(after);

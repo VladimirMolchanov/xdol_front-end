@@ -35,6 +35,7 @@
             height: 18px
             position: absolute
             right: 16px
+            transition: all .450s
             @include media-breakpoint-down(md)
                 width: 8px
                 height: 15px
@@ -132,9 +133,11 @@
         min-height: 240px
 
 .input-file
+    height: 52px
     input[type="file"]
         display: none
     label
+        overflow: hidden
         cursor: pointer
         border: 1px solid #D0D2D4
         padding-left: 23px
@@ -143,6 +146,7 @@
         padding-top: 11px
         z-index: 1
         position: relative
+        margin-bottom: 0
         @include media-breakpoint-down(md)
             padding-left: 22px
             padding-right: 24px
@@ -167,23 +171,24 @@
                 display: none
             .field__file-fake
                 display: block
-        &::after
+        .after
             background: $color--main
             content: ''
             height: 100%
             left: 0
             position: absolute
             top: 0
-            transition: all .3s
-            width: 0%
+            // transition: all .3s
+            width: 100%
             z-index: -1
+            transform: translateX(-100%)
         @include hover()
             text-decoration: none
             color: #fff
             // background-color: #fff
             // border-color: #fff
-            &::after
-                width: 100%
+            // &::after
+            //     width: 100%
             .arrow
                 svg
                     path

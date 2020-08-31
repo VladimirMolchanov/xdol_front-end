@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import { gsap } from "gsap";
-import * as THREE from './three.module.js';
+import * as THREE from 'three/build/three.module';
 
 /* Utils ------------------------------------------ */
 const textureLoader = new THREE.TextureLoader()
@@ -258,56 +258,63 @@ class SceneManager {
         )
     }
 }
-
-/* Init stuff */
-const sceneManager = new SceneManager({
-    canvas: document.getElementById('canvas'),
-    images: ["./uploads/image.png", "./uploads/1.jpg", "./uploads/2.jpg", "./uploads/3.jpg", "./uploads/4.jpg"],
-    displacementMap: "/uploads/clouds.jpg",
-    duration: 0.750,
-})
-
-const resizeCanvas = () => {
-    canvas.style.width = '100%'
-    canvas.style.height = '100%'
-
-    canvas.width = canvas.offsetWidth
-    canvas.height = canvas.offsetHeight
-
-    sceneManager.resizeHandler()
-}
-
-const bindEvents = () => {
-    window.onresize = resizeCanvas
-    resizeCanvas()
-}
-
-const render = () => {
-    window.requestAnimationFrame(render)
-    sceneManager.update()
-}
-
-bindEvents()
-render()
-
-
 $(document).ready(function() {
-    $("#img1").on("mouseover", function(e) {
-        sceneManager.swapToImage(0)
+
+if(document.getElementById('imageSwapper')) {
+    /* Init stuff */
+    let canvas = document.getElementById('imageSwapper')
+    const sceneManager = new SceneManager({
+        canvas: canvas,
+        images: ["./uploads/image.png", "./uploads/1.jpg", "./uploads/2.jpg", "./uploads/3.jpg", "./uploads/4.jpg"],
+        displacementMap: "/uploads/clouds.jpg",
+        duration: 0.750,
     })
-    $("#img2").on("mouseover", function(e) {
-        sceneManager.swapToImage(1)
-    })
-    $("#img3").on("mouseover", function(e) {
-        sceneManager.swapToImage(2)
-    })
-    $("#img4").on("mouseover", function(e) {
-        sceneManager.swapToImage(3)
-    })
-    $("#img5").on("mouseover", function(e) {
-        sceneManager.swapToImage(4)
-    })
-    $("#img6").on("mouseover", function(e) {
-        sceneManager.swapToImage(1)
-    })
+
+    const resizeCanvas = () => {
+        canvas.style.width = '100%'
+        canvas.style.height = '100%'
+
+        canvas.width = canvas.offsetWidth
+        canvas.height = canvas.offsetHeight
+
+        sceneManager.resizeHandler()
+    }
+
+    const bindEvents = () => {
+        window.onresize = resizeCanvas
+        resizeCanvas()
+    }
+
+    const render = () => {
+        window.requestAnimationFrame(render)
+        sceneManager.update()
+    }
+
+    bindEvents()
+    render()
+
+
+    $(document).ready(function() {
+        $("#img1").on("mouseover", function(e) {
+            sceneManager.swapToImage(0)
+        })
+        $("#img2").on("mouseover", function(e) {
+            sceneManager.swapToImage(1)
+        })
+        $("#img3").on("mouseover", function(e) {
+            sceneManager.swapToImage(2)
+        })
+        $("#img4").on("mouseover", function(e) {
+            sceneManager.swapToImage(3)
+        })
+        $("#img5").on("mouseover", function(e) {
+            sceneManager.swapToImage(4)
+        })
+        $("#img6").on("mouseover", function(e) {
+            sceneManager.swapToImage(1)
+        })
+    });
+}
 });
+
+

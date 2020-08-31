@@ -1,3 +1,4 @@
+include ../mixins/further.pug
 doctype html
 html(lang="ru")
     include ../includes/head.pug
@@ -69,7 +70,7 @@ html(lang="ru")
                                             img(src="./uploads/JPMC.png", alt="").img-fluid
                                     .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
                                         .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                            img(src="./uploads/AT&T.png", alt="").img-fluid
+                                            img(src="./uploads/Intel.png", alt="").img-fluid
                                     .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
                                         .main-content__listclient-item.d-flex.align-items-center.justify-content-center
                                             img(src="./uploads/IBM.png", alt="").img-fluid
@@ -88,13 +89,5 @@ html(lang="ru")
                                     .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
                                         .main-content__listclient-item.d-flex.align-items-center.justify-content-center
                                             img(src="./uploads/JPMC.png", alt="").img-fluid
-            .block-further
-                .block-further--btn
-                    a(href="/dist/services.html").btn.btn-x-default.btn-x-default-light.btn-arrow-right.btn-lg
-                        span Подробнее об услугах
-                        .after
-                        .arrow
-                            <svg width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.757814 8.58594L8.35156 5L8.35156 4.15625L0.757813 0.578125L0.757813 2.11719L6.25781 4.58594L0.757813 7.04687L0.757814 8.58594ZM9.49219 8.58594L17.0859 5L17.0859 4.15625L9.49219 0.578124L9.49219 2.11719L14.9922 4.58594L9.49219 7.04687L9.49219 8.58594Z" fill="white"/>
-                            </svg>
+            +further('/dist/services.html', 'Подробнее об услугах')
         include ../includes/footer.pug

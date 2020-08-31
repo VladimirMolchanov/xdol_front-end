@@ -25,13 +25,12 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views')
 module.exports = {
     entry: {
         app: './src/js/index.js',
-        second: './src/js/second.js',
         style: './src/scss/index.sass'
     },
     output: {
         filename: './js/[name].js',
-        path: path.resolve(__dirname, './dist'),
-        publicPath: "/"
+        path: path.resolve(__dirname, 'dist/'),
+        publicPath: ""
     },
     devServer: {
         port: 8081,
@@ -63,24 +62,36 @@ module.exports = {
             // },
             {
                 test: /\.css$/,
+                exclude: /(node_modules|bower_components)/,
                 use: [
-                  "style-loader",
-                  {
-                    loader: "css-loader",
-                    options: {
-                        modules: true
-                    }
-                  }
+                    "style-loader",
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: { sourceMap: true, config: { path: 'postcss.config.js' } }
+                    },
                 ]
             },
             {
                 test: /\.(sass|scss)$/,
-                exclude: /node_modules/,
-                include: path.resolve(__dirname, 'src/scss'),
+                exclude: /(node_modules|bower_components)/,
+                // include: path.resolve(__dirname, 'src/scss'),
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
+                            publicPath: '../',
                             sourceMap: true
                         }
                     },
@@ -104,31 +115,34 @@ module.exports = {
             },
             {
                 test: /\.pug$/,
+                exclude: /(node_modules|bower_components)/,
                 loader: 'pug-loader'
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                exclude: /(node_modules|bower_components)/,
                 include: path.resolve(__dirname, 'src/fonts'),
                 use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      name: '[name].[ext]',
-                      outputPath: './fonts/'
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
                     }
-                  }
                 ]
             },
             {
                 test: /\.(jpg|png|svg|gif)$/,
+                exclude: /(node_modules|bower_components)/,
                 use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      name: '[name].[ext]',
-                      outputPath: './img/'
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'img'
+                        }
                     }
-                  }
                 ]
             }
         ]
@@ -142,11 +156,11 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-            {
-                from: './src/favicon',
-                to: './favicon',
-                noErrorOnMissing: true
-            },
+            // {
+            //     from: './src/favicon',
+            //     to: './favicon',
+            //     noErrorOnMissing: true
+            // },
             {
                 from: './src/img',
                 to: './img',

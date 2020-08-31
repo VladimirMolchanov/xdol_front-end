@@ -92,9 +92,12 @@
                 @include media-breakpoint-down(md)
                     padding-left: 19px
             a
-                color: #71777D
+                // color: #71777D
+                color: #fff
                 font-size: inherit
                 line-height: inherit
+                &.active
+                    color: #71777D
                 @include hover()
                     color: #fff
             &.last
