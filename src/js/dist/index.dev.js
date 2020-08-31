@@ -115,7 +115,7 @@ var animateBtn2 = null;
       click: false,
       disableMouse: true,
       disablePointer: true,
-      disableTouch: true,
+      disableTouch: false,
       bounceTime: 600,
       deceleration: 0.1,
       mouseWheelSpeed: 20

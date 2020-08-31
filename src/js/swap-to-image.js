@@ -266,7 +266,7 @@ if(document.getElementById('imageSwapper')) {
     const sceneManager = new SceneManager({
         canvas: canvas,
         images: ["./uploads/image.png", "./uploads/1.jpg", "./uploads/2.jpg", "./uploads/3.jpg", "./uploads/4.jpg"],
-        displacementMap: "/uploads/clouds.jpg",
+        displacementMap: "./uploads/clouds.jpg",
         duration: 0.750,
     })
 
