@@ -32,6 +32,7 @@
         min-height: auto
         padding-top: 174px
         align-items: flex-start
+        height: 100%
     @media screen and (min-width: 1330px + 13px)
         margin-top: 0px
     .block-down
@@ -377,3 +378,8 @@
         padding-left: 360px
     @media screen and (min-width: 1800px) //380
         padding-left: 380px
+
+.fullpage
+    + .fp-scroller
+        @include media-breakpoint-down(md) 
+            height: 100%
