@@ -92,9 +92,9 @@ $(document).ready(function(){
             disableMouse: true,
             disablePointer: true,
             disableTouch: false,
-            bounceTime: 600,
-            deceleration: 0.1,
-            mouseWheelSpeed: 20
+            // bounceTime: 600,
+            // deceleration: 0.1,
+            // mouseWheelSpeed: 20
         }
     });
     

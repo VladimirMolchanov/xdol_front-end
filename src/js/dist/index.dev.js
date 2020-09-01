@@ -91,10 +91,10 @@ var animateBtn1 = null;
       click: false,
       disableMouse: true,
       disablePointer: true,
-      disableTouch: false,
-      bounceTime: 600,
-      deceleration: 0.1,
-      mouseWheelSpeed: 20
+      disableTouch: false // bounceTime: 600,
+      // deceleration: 0.1,
+      // mouseWheelSpeed: 20
+
     }
   });
   var owl = (0, _jquery["default"])('.owl-carousel').owlCarousel({
