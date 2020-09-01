@@ -3,7 +3,7 @@ import { TweenLite, Circ } from "gsap";
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
     largeHeader = document.getElementById('main-page');
-    if(largeHeader) {
+    if(largeHeader && window.innerWidth >= 1024) {
         // Main
         initHeader();
         initAnimation();
@@ -40,7 +40,6 @@ import { TweenLite, Circ } from "gsap";
                 points.push(p);
             }
         }
-        console.log(points)
 
         // for each point find the 5 closest points
         for(var i = 0; i < points.length; i++) {

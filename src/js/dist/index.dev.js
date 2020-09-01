@@ -100,7 +100,7 @@ var animateBtn1 = null;
   var owl = (0, _jquery["default"])('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
-    nav: true,
+    nav: false,
     items: 1,
     stagePadding: 20,
     autoplay: true,
@@ -137,10 +137,10 @@ var animateBtn1 = null;
     onInitialized: function onInitialized(event) {
       var namespace = event.namespace;
       var element = event.target;
-      var items = event.item.count;
-      var nav = (0, _jquery["default"])(element).find(".owl-nav");
-      var prev = nav.find(".owl-prev");
-      (0, _jquery["default"])(prev).after("<div class='text-positions'><span class='curent'>01 </span>/ 06<span><span></div>");
+      var items = event.item.count; // var nav = $(element).find(".owl-nav")
+      // var prev = nav.find(".owl-prev")
+      // $(prev).after("<div class='text-positions'><span class='curent'>01 </span>/ 06<span><span></div>")
+
       var dots = (0, _jquery["default"])(".owl-custom-dots");
       var current = dots.children();
       (0, _jquery["default"])(current[0]).addClass("active");
