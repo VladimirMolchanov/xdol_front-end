@@ -5,151 +5,150 @@ html(lang="ru")
     body.fullpage
         .noise
         #fullpage
-            .main__content
-                .section
-                    include ../includes/header.pug
-                    section#main-page.main-page
-                        canvas#canvas-line.main-page__canvas-line
-                        .block-down
-                            span Листать вниз
-                        .owl-carousel.owl-theme.owl-main
-                            .item
-                                .owl-main-item
-                                    .owl-main-item--name
-                                        span Полная эспертиза<br> в облаках AWS
-                            .item
-                                .owl-main-item
-                                    .owl-main-item--name
-                                        span Разрабатываем решения под ключ
-                            .item
-                                .owl-main-item
-                                    .owl-main-item--name
-                                        span Полная эспертиза<br> в облаках AWS
-                            .item
-                                .owl-main-item
-                                    .owl-main-item--name
-                                        span Разрабатываем решения под ключ
-                            .item
-                                .owl-main-item
-                                    .owl-main-item--name
-                                        span Полная эспертиза<br> в облаках AWS
-                            .item
-                                .owl-main-item
-                                    .owl-main-item--name
-                                        span Разрабатываем решения под ключ
-                
-                        .panel-bottom
-                            .owl-custom-dots
-                                button.owl-dot
-                                    span
-                                button.owl-dot
-                                    span
-                                button.owl-dot
-                                    span
-                                button.owl-dot
-                                    span
-                                button.owl-dot
-                                    span
-                                button.owl-dot
-                                    span
-                                .after
-                            .panel-bottom__contacts
-                                .panel-bottom__email
-                                    a(href="mailto@hello@mail.com") hello@mail.com
-                                .panel-bottom__phone
-                                    a(href="tel:+7 999 999 99 99") +7 999 999 99 99
-                                .panel-bottom__social
-                                    a.panel-bottom__social-link.panel-bottom__social-link--relegram(href="javascript:void(0)")
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 24C18.629 24 24 18.629 24 12C24 5.371 18.629 0 12 0C5.371 0 0 5.371 0 12C0 18.629 5.371 24 12 24ZM5.491 11.74L17.061 7.279C17.598 7.085 18.067 7.41 17.893 8.222L17.894 8.221L15.924 17.502C15.778 18.16 15.387 18.32 14.84 18.01L11.84 15.799L10.393 17.193C10.233 17.353 10.098 17.488 9.788 17.488L10.001 14.435L15.561 9.412C15.803 9.199 15.507 9.079 15.188 9.291L8.317 13.617L5.355 12.693C4.712 12.489 4.698 12.05 5.491 11.74Z" fill="#888888"/>
-                                        </svg>
-                .section
-                    main.main-content(style="position:relative")
-                        .container
-                            .row
-                                .col-12
-                                    //- .main-content__plug
-                                    .main-content__info.main-content__info-v1
-                                        .row
-                                            .col-12
-                                                .main-content__info--title
-                                                    span Введение
-                                            .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
-                                                .main-content__info--item
-                                                    h2 Компания основана выходцами из Microsoft
-                                                    p.text-x-secondary Более 80% сотрудников — выпускники МГУ,<br> МФТИ, ВШЭ и ШАД Яндекса с опытом работы<br> в крупнейших ИТ-корпорациях
-                                            .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
-                                                .main-content__info--item
-                                                    h3 В штате более 30 высококлассных специалистов с компетенциями
-                                                    ul.ul--default
-                                                        li Data Science
-                                                        li Python
-                                                        li Java
-                                                        li Data Engineering
-                                                        li Frontend (Angular, React, Vue) и др.
-                                                    a(href="javascript:void(0)" data-css="default-link-3").default-link.default-link-3
-                                                        include ../includes/arrows.pug
-                                                        span Услуги
-                        .main-content__mini-project
-                            .main-content__mini-project--body
-                            .main-content__mini-project--image
-                                canvas#imageSwapper.image-swapper
-                            .container
-                                .row
-                                    .col-12
-                                        .main-content__mini-project--content
-                                            .main-content__mini-project--content-title
-                                                span Последние проекты
-                                            .main-content__mini-project--content-list
-                                                .main-content__mini-project--content-list-item#link-project1(data-project="project1")
-                                                    a(href="/dist/case.html")#img1 JPMorgan Chase
-                                                .main-content__mini-project--content-list-item.last#link-project2(data-project="project2")
-                                                    a(href="/dist/case.html")#img2 AT&T
-                                                br
-                                                .main-content__mini-project--content-list-item#link-project3(data-project="project3")
-                                                    a(href="/dist/case.html")#img3 IBM
-                                                .main-content__mini-project--content-list-item.last#link-project4(data-project="project4")
-                                                    a(href="/dist/case.html")#img4 Microsoft
-                                                br
-                                                .main-content__mini-project--content-list-item#link-project5(data-project="project5")
-                                                    a(href="/dist/case.html")#img5 Intel
-                                                .main-content__mini-project--content-list-item.last#link-project6(data-project="project6")
-                                                    a(href="/dist/case.html")#img6 United Technologies
-                                            .main-content__mini-project--content-link
-                                                a(href="javascript:void(0)" data-css="default-link-4").default-link.default-link-4
+            .section
+                include ../includes/header.pug
+                section#main-page.main-page
+                    canvas#canvas-line.main-page__canvas-line
+                    .block-down
+                        span Листать вниз
+                    .owl-carousel.owl-theme.owl-main
+                        .item
+                            .owl-main-item
+                                .owl-main-item--name
+                                    span Полная эспертиза<br> в облаках AWS
+                        .item
+                            .owl-main-item
+                                .owl-main-item--name
+                                    span Разрабатываем решения под ключ
+                        .item
+                            .owl-main-item
+                                .owl-main-item--name
+                                    span Полная эспертиза<br> в облаках AWS
+                        .item
+                            .owl-main-item
+                                .owl-main-item--name
+                                    span Разрабатываем решения под ключ
+                        .item
+                            .owl-main-item
+                                .owl-main-item--name
+                                    span Полная эспертиза<br> в облаках AWS
+                        .item
+                            .owl-main-item
+                                .owl-main-item--name
+                                    span Разрабатываем решения под ключ
+            
+                    .panel-bottom
+                        .owl-custom-dots
+                            button.owl-dot
+                                span
+                            button.owl-dot
+                                span
+                            button.owl-dot
+                                span
+                            button.owl-dot
+                                span
+                            button.owl-dot
+                                span
+                            button.owl-dot
+                                span
+                            .after
+                        .panel-bottom__contacts
+                            .panel-bottom__email
+                                a(href="mailto@hello@mail.com") hello@mail.com
+                            .panel-bottom__phone
+                                a(href="tel:+7 999 999 99 99") +7 999 999 99 99
+                            .panel-bottom__social
+                                a.panel-bottom__social-link.panel-bottom__social-link--relegram(href="javascript:void(0)")
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 24C18.629 24 24 18.629 24 12C24 5.371 18.629 0 12 0C5.371 0 0 5.371 0 12C0 18.629 5.371 24 12 24ZM5.491 11.74L17.061 7.279C17.598 7.085 18.067 7.41 17.893 8.222L17.894 8.221L15.924 17.502C15.778 18.16 15.387 18.32 14.84 18.01L11.84 15.799L10.393 17.193C10.233 17.353 10.098 17.488 9.788 17.488L10.001 14.435L15.561 9.412C15.803 9.199 15.507 9.079 15.188 9.291L8.317 13.617L5.355 12.693C4.712 12.489 4.698 12.05 5.491 11.74Z" fill="#888888"/>
+                                    </svg>
+            .section
+                main.main-content(style="position:relative")
+                    .container
+                        .row
+                            .col-12
+                                //- .main-content__plug
+                                .main-content__info.main-content__info-v1
+                                    .row
+                                        .col-12
+                                            .main-content__info--title
+                                                span Введение
+                                        .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+                                            .main-content__info--item
+                                                h2 Компания основана выходцами из Microsoft
+                                                p.text-x-secondary Более 80% сотрудников — выпускники МГУ,<br> МФТИ, ВШЭ и ШАД Яндекса с опытом работы<br> в крупнейших ИТ-корпорациях
+                                        .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+                                            .main-content__info--item
+                                                h3 В штате более 30 высококлассных специалистов с компетенциями
+                                                ul.ul--default
+                                                    li Data Science
+                                                    li Python
+                                                    li Java
+                                                    li Data Engineering
+                                                    li Frontend (Angular, React, Vue) и др.
+                                                a(href="javascript:void(0)" data-css="default-link-3").default-link.default-link-3
                                                     include ../includes/arrows.pug
-                                                    span Все проекты
+                                                    span Услуги
+                    .main-content__mini-project
+                        .main-content__mini-project--body
+                        .main-content__mini-project--image
+                            canvas#imageSwapper.image-swapper
                         .container
                             .row
                                 .col-12
-                                    .main-content__listclient
-                                        .main-content__listclient-title.text-center
-                                            h2 Клиенты
-                                        .main-content__listclient-list
-                                            .row
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/JPMC.png", alt="").img-fluid
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/Intel.png", alt="").img-fluid
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/IBM.png", alt="").img-fluid
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/Microsoft.png", alt="").img-fluid
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/UT.png", alt="").img-fluid
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/Microsoft.png", alt="").img-fluid
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/Intel.png", alt="").img-fluid
-                                                .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
-                                                    .main-content__listclient-item.d-flex.align-items-center.justify-content-center
-                                                        img(src="./uploads/JPMC.png", alt="").img-fluid
-                        +further('/dist/services.html', 'Подробнее об услугах')
-                    include ../includes/footer.pug
+                                    .main-content__mini-project--content
+                                        .main-content__mini-project--content-title
+                                            span Последние проекты
+                                        .main-content__mini-project--content-list
+                                            .main-content__mini-project--content-list-item#link-project1(data-project="project1")
+                                                a(href="/dist/case.html")#img1 JPMorgan Chase
+                                            .main-content__mini-project--content-list-item.last#link-project2(data-project="project2")
+                                                a(href="/dist/case.html")#img2 AT&T
+                                            br
+                                            .main-content__mini-project--content-list-item#link-project3(data-project="project3")
+                                                a(href="/dist/case.html")#img3 IBM
+                                            .main-content__mini-project--content-list-item.last#link-project4(data-project="project4")
+                                                a(href="/dist/case.html")#img4 Microsoft
+                                            br
+                                            .main-content__mini-project--content-list-item#link-project5(data-project="project5")
+                                                a(href="/dist/case.html")#img5 Intel
+                                            .main-content__mini-project--content-list-item.last#link-project6(data-project="project6")
+                                                a(href="/dist/case.html")#img6 United Technologies
+                                        .main-content__mini-project--content-link
+                                            a(href="javascript:void(0)" data-css="default-link-4").default-link.default-link-4
+                                                include ../includes/arrows.pug
+                                                span Все проекты
+                    .container
+                        .row
+                            .col-12
+                                .main-content__listclient
+                                    .main-content__listclient-title.text-center
+                                        h2 Клиенты
+                                    .main-content__listclient-list
+                                        .row
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/JPMC.png", alt="").img-fluid
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/Intel.png", alt="").img-fluid
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/IBM.png", alt="").img-fluid
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/Microsoft.png", alt="").img-fluid
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/UT.png", alt="").img-fluid
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/Microsoft.png", alt="").img-fluid
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/Intel.png", alt="").img-fluid
+                                            .col-6.col-sm-6.col-md-6.col-lg-3.col-xl-3
+                                                .main-content__listclient-item.d-flex.align-items-center.justify-content-center
+                                                    img(src="./uploads/JPMC.png", alt="").img-fluid
+                    +further('/dist/services.html', 'Подробнее об услугах')
+                include ../includes/footer.pug
