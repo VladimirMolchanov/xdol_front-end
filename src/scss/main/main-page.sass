@@ -175,6 +175,7 @@
             opacity: 1
             .owl-main-item--name
                 span
+                    -webkit-text-stroke: 0px
                     color: $color--main
             + .owl-item
                 opacity: 1
@@ -380,6 +381,8 @@
         padding-left: 380px
 
 .fullpage
-    + .fp-scroller
-        @include media-breakpoint-down(md) 
-            height: 100%
+    .fp-section
+        &:first-child
+            .fp-scroller
+                @include media-breakpoint-down(md) 
+                    height: 100%

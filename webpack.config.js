@@ -28,7 +28,7 @@ module.exports = {
         style: './src/scss/index.sass'
     },
     output: {
-        filename: './js/[name].js',
+        filename: './js/[name]-[hash].js',
         path: path.resolve(__dirname, 'dist/'),
         publicPath: ""
     },
@@ -151,8 +151,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "./css/[name].css",
-            chunkFilename: "./css/[id].css"
+            filename: "./css/[name]-[hash].css",
+            chunkFilename: "./css/[id]-[hash].css"
         }),
         new CopyWebpackPlugin({
             patterns: [
