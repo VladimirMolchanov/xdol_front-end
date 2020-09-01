@@ -29,7 +29,8 @@
     @include media-breakpoint-down(md)
         margin-top: -174px
         min-height: auto
-        padding-top: 184px
+        padding-top: 204px
+        align-items: flex-start
     @media screen and (min-width: 1330px + 13px)
         margin-top: 0px
     .block-down
@@ -145,7 +146,7 @@
                 margin-right: 62px
                 @include media-breakpoint-down(md)
                     display: block
-                    margin-bottom: 24px
+                    margin-bottom: 40px
                 &:last-child
                     margin-right: 0
                     margin-bottom: 0
@@ -160,11 +161,11 @@
             @include media-breakpoint-down(md)
                 font-size: rem(32)
                 line-height: rem(40)
-                margin-bottom: 32px
+                margin-bottom: 48px
             span
                 -webkit-text-stroke: 1px
                 -webkit-text-stroke-color: $color--main
-                color: #E5E5E5
+                color: rgba(0,0,0,0)
                 transition: all 1s
     .owl-item
         opacity: 0
@@ -351,7 +352,7 @@
         margin-right: 62px
         @include media-breakpoint-down(md)
             display: block
-            margin-bottom: 24px
+            margin-bottom: 40px
         &:last-child
             margin-right: 0
             margin-bottom: 0

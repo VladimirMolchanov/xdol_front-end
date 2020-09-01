@@ -131,7 +131,7 @@ var animateBtn1 = null;
         stagePadding: 360
       },
       1800: {
-        stagePadding: 380
+        stagePadding: 360
       }
     },
     onInitialized: function onInitialized(event) {

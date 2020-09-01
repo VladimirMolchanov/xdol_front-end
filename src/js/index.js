@@ -132,7 +132,7 @@ $(document).ready(function(){
                 stagePadding: 360,
             },
             1800: {
-                stagePadding: 380,
+                stagePadding: 360,
             },
         },
         onInitialized: (event) => {

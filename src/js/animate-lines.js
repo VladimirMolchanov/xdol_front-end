@@ -25,15 +25,22 @@ import { TweenLite, Circ } from "gsap";
         ctx = canvas.getContext('2d');
 
         // create points
+        
         points = [];
-        for(var x = 0; x < width; x = x + width/20) {
-            for(var y = 0; y < height; y = y + height/20) {
-                var px = x + Math.random()*width/20;
-                var py = y + Math.random()*height/20;
+        var count = 8
+        if(window.innerWidth >= 1024) {
+            var count = 20
+        }
+        
+        for(var x = 0; x < width; x = x + width/count) {
+            for(var y = 0; y < height; y = y + height/count) {
+                var px = x + Math.random()*width/count;
+                var py = y + Math.random()*height/count;
                 var p = {x: px, originX: px, y: py, originY: py };
                 points.push(p);
             }
         }
+        console.log(points)
 
         // for each point find the 5 closest points
         for(var i = 0; i < points.length; i++) {
