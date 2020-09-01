@@ -257,4 +257,15 @@ $(document).ready(function(){
     }, function() {
         $(".main-content__mini-project--content-list-item a").removeClass("active")
     })
+
+    if(window.innerWidth < 992) {
+        console.log(window.innerHeight)
+        console.log(document.documentElement.offsetHeight)
+        $(".main-page").css({'height': ('innerHeight' in window ? window.innerHeight : document.documentElement.offsetHeight) + 'px'});
+    }
+    $(document).resize(function(){
+        if(window.innerWidth < 992) {
+            $(".main-page").css({'height': ('innerHeight' in window ? window.innerHeight : document.documentElement.offsetHeight) + 'px'});
+        }
+    })
 });

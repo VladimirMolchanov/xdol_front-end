@@ -244,4 +244,20 @@ var animateBtn1 = null;
   }, function () {
     (0, _jquery["default"])(".main-content__mini-project--content-list-item a").removeClass("active");
   });
+
+  if (window.innerWidth < 992) {
+    console.log(window.innerHeight);
+    console.log(document.documentElement.offsetHeight);
+    (0, _jquery["default"])(".main-page").css({
+      'height': ('innerHeight' in window ? window.innerHeight : document.documentElement.offsetHeight) + 'px'
+    });
+  }
+
+  (0, _jquery["default"])(document).resize(function () {
+    if (window.innerWidth < 992) {
+      (0, _jquery["default"])(".main-page").css({
+        'height': ('innerHeight' in window ? window.innerHeight : document.documentElement.offsetHeight) + 'px'
+      });
+    }
+  });
 });
