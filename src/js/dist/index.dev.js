@@ -103,7 +103,7 @@ var animateBtn1 = null;
     nav: false,
     items: 1,
     stagePadding: 20,
-    // autoplay:true,
+    autoplay: true,
     autoplayTimeout: 5000,
     responsive: {
       720: {

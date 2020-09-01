@@ -143,6 +143,8 @@
     .owl-main-item
         // padding-left: 380px
         width: 80%
+        @include media-breakpoint-down(md)
+            width: 90%
         .owl-main-item--link
             .default-link
                 margin-right: 62px
@@ -169,6 +171,9 @@
                 -webkit-text-stroke-color: rgba(208,210,212,0.8)
                 color: rgba(0,0,0,0)
                 transition: all 1s
+            br
+                @include media-breakpoint-down(md)
+                    display: none
     .owl-item
         opacity: 0
         &.active
