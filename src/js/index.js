@@ -35,21 +35,20 @@ $(".btn-x-default-light").hover(function() {
         })
         .to( $(this), {
             color: "#121C26", 
-            duration: "0.5"
-        }, "<-1")
+        }, "<-0.5")
 }, function() {
     animateBtn.to( $(this).find('.after'), {
         x: "100%", 
     })
     .to( $(this), {
-        color: "#FFFFFF", 
+        color: "#FFFFFF",
         duration: "0.5"
-    }, "<-1")
+    }, "<-0.5")
 })
 
 
 var animateBtn1 = null
-$(".btn-x-default-dark").hover(function() {
+$(".btn-x-default-dark, .input-file").hover(function() {
     
     animateBtn1 = gsap.timeline()
     animateBtn1  
@@ -63,42 +62,14 @@ $(".btn-x-default-dark").hover(function() {
         })
         .to( $(this), {
             color: "#FFFFFF", 
-            duration: "0.5"
-        }, "<-1")
+        }, "<-0.5")
 }, function() {
     animateBtn1.to( $(this).find('.after'), {
         x: "100%", 
     })
     .to( $(this), {
         color: "#121C26", 
-        duration: "0.5"
-    }, "<-1")
-})
-
-var animateBtn2 = null
-$(".input-file").hover(function() {
-    animateBtn2 = gsap.timeline()
-    animateBtn2  
-        .to( $(this).find('.after'), {
-            x: "-100%", 
-            duration: "0"
-        })
-        .to( $(this).find('.after'), {
-            x: "0", 
-            duration: "0.5"
-        })
-        .to( $(this), {
-            color: "#FFFFFF", 
-            duration: "0.5"
-        }, "<-1")
-}, function() {
-    animateBtn2.to( $(this).find('.after'), {
-        x: "100%", 
-    })
-    .to( $(this), {
-        color: "#121C26", 
-        duration: "0.5"
-    }, "<-1")
+    }, "<-0.5")
 })
 
 $(document).ready(function(){

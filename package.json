@@ -51,6 +51,7 @@
     "react-dom": "^16.13.1",
     "react-scrollbars-custom": "^4.0.25",
     "resolve-url-loader": "^3.1.1",
+    "swiper": "^6.1.2",
     "three": "^0.120.0",
     "twgl-base.js": "^4.16.0",
     "twgl.js": "^4.16.0"

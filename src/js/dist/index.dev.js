@@ -42,19 +42,18 @@ var animateBtn = null;
     x: "0",
     duration: "0.5"
   }).to((0, _jquery["default"])(this), {
-    color: "#121C26",
-    duration: "0.5"
-  }, "<-1");
+    color: "#121C26"
+  }, "<-0.5");
 }, function () {
   animateBtn.to((0, _jquery["default"])(this).find('.after'), {
     x: "100%"
   }).to((0, _jquery["default"])(this), {
     color: "#FFFFFF",
     duration: "0.5"
-  }, "<-1");
+  }, "<-0.5");
 });
 var animateBtn1 = null;
-(0, _jquery["default"])(".btn-x-default-dark").hover(function () {
+(0, _jquery["default"])(".btn-x-default-dark, .input-file").hover(function () {
   animateBtn1 = _gsap.gsap.timeline();
   animateBtn1.to((0, _jquery["default"])(this).find('.after'), {
     x: "-100%",
@@ -63,37 +62,14 @@ var animateBtn1 = null;
     x: "0",
     duration: "0.5"
   }).to((0, _jquery["default"])(this), {
-    color: "#FFFFFF",
-    duration: "0.5"
-  }, "<-1");
+    color: "#FFFFFF"
+  }, "<-0.5");
 }, function () {
   animateBtn1.to((0, _jquery["default"])(this).find('.after'), {
     x: "100%"
   }).to((0, _jquery["default"])(this), {
-    color: "#121C26",
-    duration: "0.5"
-  }, "<-1");
-});
-var animateBtn2 = null;
-(0, _jquery["default"])(".input-file").hover(function () {
-  animateBtn2 = _gsap.gsap.timeline();
-  animateBtn2.to((0, _jquery["default"])(this).find('.after'), {
-    x: "-100%",
-    duration: "0"
-  }).to((0, _jquery["default"])(this).find('.after'), {
-    x: "0",
-    duration: "0.5"
-  }).to((0, _jquery["default"])(this), {
-    color: "#FFFFFF",
-    duration: "0.5"
-  }, "<-1");
-}, function () {
-  animateBtn2.to((0, _jquery["default"])(this).find('.after'), {
-    x: "100%"
-  }).to((0, _jquery["default"])(this), {
-    color: "#121C26",
-    duration: "0.5"
-  }, "<-1");
+    color: "#121C26"
+  }, "<-0.5");
 });
 (0, _jquery["default"])(document).ready(function () {
   var temp = new _fullpage["default"]('#fullpage', {
